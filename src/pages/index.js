@@ -1,21 +1,52 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+import AnimePreview from "../components/animePreview"
+
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulReview {
+        edges {
+          node {
+            title
+            elevator {
+              elevator
+            }
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  const reviews = data.allContentfulReview.edges
+
+  return (
+    <Layout>
+      <SEO title="Home" />
+
+      <div className="anime-container">
+        {reviews.map(({ node: review }) => {
+          const title = review.title
+          const elevator = review.elevator
+          const slug = review.slug
+          // const imageData = review.image.childImageSharp.fluid
+          return (
+            <AnimePreview
+              title={title}
+              elevator={elevator}
+              // imageData={imageData}
+              slug={slug}
+            />
+          )
+        })}
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage
