@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "anfnaf",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Anime for non-anime fans, review website to help new people get into Anime",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jon Gaffney <https://jongaffney.tech/>",
   "dependencies": {
     "dotenv": "^8.1.0",
     "gatsby": "^2.15.34",
