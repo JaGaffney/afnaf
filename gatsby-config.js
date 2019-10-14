@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== "production") {
 module.exports = {
   siteMetadata: {
     title: `Anime For Non-Anime Fans`,
-    description: `Website designed to help non-anime watcher find an anime for them.`,
+    description: `Website designed to help non-anime watchers find an anime for them.`,
     author: `Jon Gaffney: https://jongaffney.tech/`,
   },
   plugins: [
@@ -38,6 +38,7 @@ module.exports = {
       options: {
         spaceId: "99lzub6zmlxx",
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     // "gatsby-transformer-json",

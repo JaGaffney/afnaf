@@ -12,37 +12,106 @@ export const query = graphql`
         description
       }
       raiting {
-        overall
-        lore
-        music
-        animation
+        overall {
+          rank
+          description
+        }
+        lore {
+          rank
+          description
+        }
+        music {
+          rank
+          description
+        }
+        animation {
+          rank
+          description
+        }
+        length {
+          rank
+          description
+        }
+        first_5_mins {
+          rank
+          description
+        }
+        first_episode {
+          rank
+          description
+        }
+        availablity {
+          rank
+          description
+        }
+        group_watch {
+          rank
+          description
+        }
+        filler {
+          rank
+          description
+        }
+      }
+      image {
+        file {
+          url
+        }
+        fluid {
+          ...GatsbyContentfulFluid_withWebp
+        }
       }
     }
   }
 `
 
 const AnimeTemplate = ({ data }) => {
-  const review = data.contentfulReview
+  const [raitingContaier, setRaitingContainer] = useState("")
 
-  //const imageData = review.image.childImageSharp.fluid
+  const review = data.contentfulReview
+  const imageData = review.image.fluid
+
   return (
     <Layout>
-      <h1>{review.title}</h1>
-      <h1>{review.raiting.overall}/50</h1>
+      <div className="review-container">
+        <div className="review-details">
+          <div className="review-details-title">
+            <h1>{review.title}</h1>
+            <h1>raiting: {review.raiting.overall.rank}/50</h1>
+          </div>
+          <div className="review-details-content">
+            <p>{review.description.description}</p>
+          </div>
 
-      <p>{review.description.description}</p>
+          <div className="review-details-image-container">
+            <Image
+              fluid={imageData}
+              alt={review.title}
+              className="review-details-image"
+            />
+          </div>
+        </div>
 
-      <div>
-        <ul>
-          <li>overall: {review.raiting.overall}</li>
-          <li>lore: {review.raiting.lore}</li>
-          <li>music: {review.raiting.music}</li>
-          <li>animation: {review.raiting.animation}</li>
-        </ul>
+        <div className="review-raitings">
+          <div className="review-raiting-ranking">
+            <ul>
+              {Object.keys(review.raiting).map((item, index) => {
+                return (
+                  <li
+                    key={index}
+                    onClick={() =>
+                      setRaitingContainer(review.raiting[item].description)
+                    }
+                  >
+                    {item}: {review.raiting[item].rank}
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+          <div className="review-raitings-description">{raitingContaier}</div>
+        </div>
       </div>
-
-      {/* <Image fluid={imageData} alt={review.title} /> */}
-      <pre>{JSON.stringify(review, null, 2)}></pre>
     </Layout>
   )
 }

@@ -17,6 +17,20 @@ const IndexPage = () => {
               elevator
             }
             slug
+            tags {
+              parents
+              partner
+              friends
+              kid
+            }
+            image {
+              file {
+                url
+              }
+              fluid {
+                ...GatsbyContentfulFluid_withWebp
+              }
+            }
           }
         }
       }
@@ -34,13 +48,15 @@ const IndexPage = () => {
           const title = review.title
           const elevator = review.elevator
           const slug = review.slug
-          // const imageData = review.image.childImageSharp.fluid
+          const tags = review.tags
+          const imageData = review.image.fluid
           return (
             <AnimePreview
               title={title}
               elevator={elevator}
-              // imageData={imageData}
+              imageData={imageData}
               slug={slug}
+              tags={tags}
             />
           )
         })}
