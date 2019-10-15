@@ -5,21 +5,23 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header>
     <nav className="header-container">
-      <h1 className="nav-title">
-        <Link
-          to="/"
-          style={{
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+      <div className="header-title">
+        <h1 className="nav-title">
+          <Link
+            to="/"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+        <span className="nav-title-quote">
+          'Recommend anime without the weirdness'
+        </span>
+      </div>
+
       <ul className="nav-links">
-        <li>For parents</li>
-        <li>For partner</li>
-        <li>For friends</li>
-        <li>For kids</li>
         <li>
           <Link to="/about/">About</Link>
         </li>

@@ -6,6 +6,20 @@
   padding: 0 2rem;
 }
 
+.header-title {
+  text-align: center;
+}
+.nav-title a {
+  color: var(--dominant);
+}
+.nav-title {
+  margin-bottom: 0;
+}
+.nav-title-quote {
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -14,4 +28,11 @@
 }
 .nav-links li {
   margin: 0.2rem;
+}
+.nav-links a {
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-decoration: none;
+  color: var(--light-pink);
 }
