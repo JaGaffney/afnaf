@@ -116,6 +116,8 @@ const AnimeTemplate = ({ data }) => {
                       {item}: {review.raiting[item].rank}
                     </li>
                   )
+                } else {
+                  return <></>
                 }
               })}
             </ul>
