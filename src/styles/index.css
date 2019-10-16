@@ -67,9 +67,15 @@ main {
 footer {
   padding: 1rem;
   width: 100%;
-  height: 10rem;
+  height: 15rem;
   grid-column: 1 / 4;
   background: var(--green);
+}
+.footer-container ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Banner */
@@ -95,16 +101,23 @@ footer {
   flex-wrap: wrap;
   width: 100%;
 }
+.anime-contents-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
 
 .anime-contents {
   width: 100%;
-  transition: fadein 2s;
 }
 .anime-contents-title {
   text-transform: capitalize;
   color: var(--dominant);
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: -1px;
 }
 .anime-contents-description {
   font-style: italic;

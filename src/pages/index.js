@@ -142,7 +142,7 @@ const IndexPage = () => {
           />
         </div>
 
-        <div className="anime-contents-container">
+        <div className="anime-contents-wrapper">
           {Object.keys(filterValues).map(item => {
             if (filterValues[item]) {
               return (
