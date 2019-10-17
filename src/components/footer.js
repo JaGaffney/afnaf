@@ -1,6 +1,6 @@
 import React from "react"
 
-import { FiFacebook, FiGithub, FiGlobe } from "react-icons/fi"
+import { FiFacebook, FiGithub, FiGlobe, FiYoutube } from "react-icons/fi"
 
 const Footer = () => {
   return (
@@ -26,6 +26,16 @@ const Footer = () => {
           <a href="https://jongaffney.tech/">
             {" "}
             <FiGlobe
+              vertical-align="middle"
+              horizontal-align="middle"
+              size="3em"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            {" "}
+            <FiYoutube
               vertical-align="middle"
               horizontal-align="middle"
               size="3em"

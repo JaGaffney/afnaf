@@ -19,12 +19,6 @@ const Header = ({ siteTitle }) => (
         <span className="nav-title-quote">
           'Recommend anime without the weirdness'
         </span>
-
-        <div class="main-bird-container">
-          <div class="bird-container">
-            <div class="bird"></div>
-          </div>
-        </div>
       </div>
 
       <ul className="nav-links">

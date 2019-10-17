@@ -18,12 +18,15 @@
 
 /* Generics */
 .btn {
+  text-shadow: rgba(0, 0, 0, 0.089) 0px 0px 1px,
+    rgba(0, 0, 0, 0.075) 0px 0px 1px;
+  border-radius: 2rem;
   text-transform: uppercase;
-  border: solid 3px var(--dominant);
-  background: var(--light-pink-seethrough);
-  color: var(--red);
+  border: solid 3px var(--blue);
+  background: var(--light);
+  color: var(--blue);
   width: 10rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 900;
   margin: 1rem;
   cursor: pointer;
@@ -31,11 +34,12 @@
   letter-spacing: 2px;
 }
 .btn:hover {
-  border: solid 3px var(--blue);
-  background: var(--light);
-  color: var(--dark);
+  color: var(--dominant);
+  border: solid 3px var(--dominant);
+  background: var(--light-pink-seethrough);
 }
 .filter-button-active {
+  border: solid 3px var(--dominant);
   background: var(--light-pink);
   color: var(--light);
 }
@@ -170,9 +174,9 @@ footer {
   color: var(--red);
   font-size: 1rem;
   font-weight: 900;
-  text-align: right;
   grid-column: 2;
-  grid-row: 2/4;
+  grid-row: 2;
+  text-align: right;
 }
 
 .anime-preview-tags-container {

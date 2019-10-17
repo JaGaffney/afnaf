@@ -45,28 +45,29 @@ const IndexPage = () => {
     parents:
       "Aimed at the skeptic parent who doesn't want to watch cartoons but watches the simpsons",
     partner: "Anime you can watch together",
-    friends: "add something",
+    friends:
+      "So you can have someone to debate with over who is stronger between Narto and Ichigo",
     kids:
       "Child Friendly and not too annoying that you can put up with it on the 500th viewing",
     solo:
       "The weird stuff that's good but you don't want to tell anyone that you have watched it",
-    all: "",
+    all: "From best to worst, generic raiting",
   }
 
   const [filterValues, setFilterValues] = useState({
-    parents: true,
-    partner: true,
-    friends: true,
-    kids: true,
-    solo: true,
+    parents: false,
+    partner: false,
+    friends: false,
+    kids: false,
+    solo: false,
     all: true,
   })
   const [showAll, setShowAll] = useState(false)
-  const [showParents, setShowParents] = useState(true)
-  const [showPartner, setShowPartner] = useState(true)
-  const [showFriends, setShowFriends] = useState(true)
-  const [showKids, setShowKids] = useState(true)
-  const [showSolo, setShowSolo] = useState(true)
+  const [showParents, setShowParents] = useState(false)
+  const [showPartner, setShowPartner] = useState(false)
+  const [showFriends, setShowFriends] = useState(false)
+  const [showKids, setShowKids] = useState(false)
+  const [showSolo, setShowSolo] = useState(false)
 
   const reviews = data.allContentfulReview.edges
 
@@ -74,11 +75,11 @@ const IndexPage = () => {
     // resets back to default when reset is selected
     if (type === "reset") {
       setFilterValues({
-        parents: true,
-        partner: true,
-        friends: true,
-        kids: true,
-        solo: true,
+        parents: false,
+        partner: false,
+        friends: false,
+        kids: false,
+        solo: false,
         all: true,
       })
       setShowAll(false)

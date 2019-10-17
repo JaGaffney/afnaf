@@ -17,7 +17,7 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
 
       <h1 className="anime-preview-title">{title}</h1>
       <p className="anime-preview-description">{elevator.elevator}</p>
-      <span className="anime-preview-raiting">{raiting.overall.rank}/100</span>
+      <span className="anime-preview-raiting">{raiting.overall.rank}/10</span>
 
       <div className="anime-preview-tags-container">
         {tagValues.map((item, index) => {

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import RaitingContainer from "../components/animeComponents/raitingContainer"
 
 export const query = graphql`
   query($slug: String!) {
@@ -14,6 +16,9 @@ export const query = graphql`
       }
       genre {
         genre
+      }
+      elevator {
+        elevator
       }
       raiting {
         overall {
@@ -60,6 +65,10 @@ export const query = graphql`
           rank
           description
         }
+        dub_quality {
+          rank
+          description
+        }
       }
       image {
         file {
@@ -74,24 +83,32 @@ export const query = graphql`
 `
 
 const AnimeTemplate = ({ data }) => {
-  const [raitingContaier, setRaitingContainer] = useState("")
-
   const review = data.contentfulReview
   const imageData = review.image.fluid
+
+  const [
+    raitingDescriptionContainer,
+    setRaitingDescriptionContainer,
+  ] = useState(review.raiting.overall.description)
 
   return (
     <Layout>
       <SEO title={review.title} />
       <div className="review-container">
         <div className="review-details">
-          <div className="review-details-title">
-            <h1>{review.title}</h1>
-            <h1>raiting: {review.raiting.overall.rank}/100</h1>
-          </div>
           <div className="review-details-content">
-            <p>{review.description.description}</p>
+            <div className="review-details-title">
+              <h1>{review.title}</h1>
+              <h2>{review.elevator.elevator}</h2>
+              <span>
+                Genre: <i>{review.genre.genre.map(item => item + ", ")}</i>
+              </span>
+            </div>
+            <div className="review-details-description">
+              <p>{review.description.description}</p>
+              <p>{review.description.description}</p>
+            </div>
           </div>
-
           <div className="review-details-image-container">
             <Image
               fluid={imageData}
@@ -102,27 +119,14 @@ const AnimeTemplate = ({ data }) => {
         </div>
 
         <div className="review-raitings">
-          <div className="review-raiting-ranking">
-            <ul>
-              {Object.keys(review.raiting).map((item, index) => {
-                if (review.raiting[item] != null) {
-                  return (
-                    <li
-                      key={index}
-                      onClick={() =>
-                        setRaitingContainer(review.raiting[item].description)
-                      }
-                    >
-                      {item}: {review.raiting[item].rank}
-                    </li>
-                  )
-                } else {
-                  return <></>
-                }
-              })}
-            </ul>
+          <RaitingContainer
+            raitingData={review.raiting}
+            onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
+          />
+
+          <div className="review-raitings-description">
+            <p>{raitingDescriptionContainer}</p>
           </div>
-          <div className="review-raitings-description">{raitingContaier}</div>
         </div>
       </div>
     </Layout>
