@@ -29,12 +29,12 @@ const AnimeContainer = props => {
               </div>
             )
           }
+          return null
         })}
       </div>
     )
-  } else {
-    return null
   }
+  return null
 }
 
 export default AnimeContainer

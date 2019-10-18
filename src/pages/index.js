@@ -51,7 +51,7 @@ const IndexPage = () => {
       "Child Friendly and not too annoying that you can put up with it on the 500th viewing",
     solo:
       "The weird stuff that's good but you don't want to tell anyone that you have watched it",
-    all: "From best to worst, generic raiting",
+    all: "From best to worst, our recommendation raiting",
   }
 
   const [filterValues, setFilterValues] = useState({
@@ -92,8 +92,6 @@ const IndexPage = () => {
       if (!showType) {
         setFilterValues({ ...filterValues, [type]: true })
       } else {
-        // let newFilterArray = filterValues.filter(item => item !== type)
-        // setFilterValues(newFilterArray)
         setFilterValues({ ...filterValues, [type]: false })
       }
     }
@@ -160,6 +158,7 @@ const IndexPage = () => {
                 </div>
               )
             }
+            return null
           })}
         </div>
       </div>

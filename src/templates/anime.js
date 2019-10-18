@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import { FiYoutube } from "react-icons/fi"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -99,7 +100,21 @@ const AnimeTemplate = ({ data }) => {
           <div className="review-details-content">
             <div className="review-details-title">
               <h1>{review.title}</h1>
-              <h2>{review.elevator.elevator}</h2>
+              <div>
+                {review.url !== "" ? (
+                  <a href={review.url} className="youtube-icon">
+                    {" "}
+                    <FiYoutube
+                      vertical-align="middle"
+                      horizontal-align="middle"
+                      size="2rem"
+                    />
+                  </a>
+                ) : (
+                  ""
+                )}
+              </div>
+
               <span>
                 Genre: <i>{review.genre.genre.map(item => item + ", ")}</i>
               </span>

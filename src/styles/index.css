@@ -17,6 +17,10 @@
 }
 
 /* Generics */
+.youtube-icon {
+  color: #ff0000;
+}
+
 .btn {
   text-shadow: rgba(0, 0, 0, 0.089) 0px 0px 1px,
     rgba(0, 0, 0, 0.075) 0px 0px 1px;
