@@ -14,7 +14,9 @@ const AnimeContainer = props => {
           const raiting = review.raiting
           const imageData = review.image.fluid
 
-          if (tags[props.filter] || props.filter === "all") {
+          if (title === "Template") {
+            return null
+          } else if (tags[props.filter] || props.filter === "all") {
             return (
               <div className="anime-contents-inner" key={index}>
                 <AnimePreview

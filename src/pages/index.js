@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import Filter from "../components/indexComponents/filter"
 import AnimeContainer from "../components/indexComponents/animeContainer"
 
+import { FILTER_DATA } from "../components/data/filter-data"
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -40,19 +42,6 @@ const IndexPage = () => {
       }
     }
   `)
-
-  const filterData = {
-    parents:
-      "Aimed at the skeptic parent who doesn't want to watch cartoons but watches the simpsons",
-    partner: "Anime you can watch together",
-    friends:
-      "So you can have someone to debate with over who is stronger between Narto and Ichigo",
-    kids:
-      "Child Friendly and not too annoying that you can put up with it on the 500th viewing",
-    solo:
-      "The weird stuff that's good but you don't want to tell anyone that you have watched it",
-    all: "From best to worst, our recommendation raiting",
-  }
 
   const [filterValues, setFilterValues] = useState({
     parents: false,
@@ -148,7 +137,7 @@ const IndexPage = () => {
                 <div className="anime-contents">
                   <h1 className="anime-contents-title">{item}</h1>
                   <span className="anime-contents-description">
-                    "{filterData[item]}"
+                    "{FILTER_DATA[item]}"
                   </span>
                   <AnimeContainer
                     reviews={reviews}

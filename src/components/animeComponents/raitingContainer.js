@@ -1,27 +1,10 @@
 import React from "react"
 import ReactTooltip from "react-tooltip"
-
 import { FiHelpCircle } from "react-icons/fi"
 
-const RaitingContainer = props => {
-  const toolTipData = {
-    lore:
-      "How much previous knowledge of Japan you need to know in order to 'get' it.",
-    overall: "How good is the anime to watch as a non-anime fan.",
-    music: "How weeb is the opening and general music.",
-    animation: "Art style and character design, does everyone look normal?",
-    length: "Is it shounen level or 12 episodes.",
-    first_5_mins: "How likely the person will keep watching after the opening?",
-    first_episode:
-      "How likely the person will keep watching after the first episode.",
-    availablity: "Is it on netflix/amazon prime.",
-    group_watch: "How easy is it to watch as a group?",
-    filler: "How many fillers and what is the quality of these fillers.",
-    image_search:
-      "When you google the name, does it come up with fan art as the default image.",
-    dub_quality: "How good is the dub?",
-  }
+import { TOOL_TIP_DATA } from "../data/tooltip-data"
 
+const RaitingContainer = props => {
   const raitingTableGenerator = (type, value, index) => {
     if (type === "overall") {
       return null
@@ -31,7 +14,12 @@ const RaitingContainer = props => {
         return (
           <>
             <tr
-              onClick={() => props.onRaitingHandler(value.description)}
+              onClick={() =>
+                props.onRaitingHandler({
+                  description: value.description,
+                  name: type,
+                })
+              }
               key={index}
             >
               <td>{type.split("_").join(" ")}</td>
@@ -48,8 +36,8 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type}>
-              {toolTipData[type]}
+            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+              {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
         )
@@ -57,7 +45,12 @@ const RaitingContainer = props => {
         return (
           <>
             <tr
-              onClick={() => props.onRaitingHandler(value.description)}
+              onClick={() =>
+                props.onRaitingHandler({
+                  description: value.description,
+                  name: type,
+                })
+              }
               key={index}
             >
               <td>{type.split("_").join(" ")}</td>
@@ -74,8 +67,8 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type}>
-              {toolTipData[type]}
+            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+              {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
         )
@@ -83,7 +76,12 @@ const RaitingContainer = props => {
         return (
           <>
             <tr
-              onClick={() => props.onRaitingHandler(value.description)}
+              onClick={() =>
+                props.onRaitingHandler({
+                  description: value.description,
+                  name: type,
+                })
+              }
               key={index}
             >
               <td>{type.split("_").join(" ")}</td>
@@ -100,8 +98,8 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type}>
-              {toolTipData[type]}
+            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+              {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
         )
@@ -109,7 +107,12 @@ const RaitingContainer = props => {
         return (
           <>
             <tr
-              onClick={() => props.onRaitingHandler(value.description)}
+              onClick={() =>
+                props.onRaitingHandler({
+                  description: value.description,
+                  name: type,
+                })
+              }
               key={index}
             >
               <td>{type.split("_").join(" ")}</td>
@@ -126,8 +129,8 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type}>
-              {toolTipData[type]}
+            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+              {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
         )
@@ -135,7 +138,12 @@ const RaitingContainer = props => {
         return (
           <>
             <tr
-              onClick={() => props.onRaitingHandler(value.description)}
+              onClick={() =>
+                props.onRaitingHandler({
+                  description: value.description,
+                  name: type,
+                })
+              }
               key={index}
             >
               <td>{type}</td>
@@ -152,8 +160,8 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type}>
-              {toolTipData[type]}
+            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+              {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
         )
@@ -179,7 +187,6 @@ const RaitingContainer = props => {
 
         <tbody>
           {Object.keys(props.raitingData).map((item, index) => {
-            console.log(item)
             if (props.raitingData[item] != null) {
               return raitingTableGenerator(item, props.raitingData[item], index)
             } else {
@@ -189,7 +196,10 @@ const RaitingContainer = props => {
           <br />
           <tr
             onClick={() =>
-              props.onRaitingHandler(props.raitingData.overall.description)
+              props.onRaitingHandler({
+                description: props.raitingData.overall.description,
+                name: "overall",
+              })
             }
           >
             <td>Recommendation</td>
@@ -206,8 +216,8 @@ const RaitingContainer = props => {
               />
             </td>
           </tr>
-          <ReactTooltip id="overall" aria-haspopup="overall">
-            {toolTipData.overall}
+          <ReactTooltip id="overall" aria-haspopup="overall" html={true}>
+            {TOOL_TIP_DATA.overall}
           </ReactTooltip>
         </tbody>
       </table>

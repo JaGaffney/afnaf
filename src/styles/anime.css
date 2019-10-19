@@ -74,6 +74,13 @@
   grid-row: 1;
 }
 
+.tooltip-list {
+  list-style-type: none;
+}
+.tooltip-list li {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 1280px) {
   .review-details {
     display: flex;

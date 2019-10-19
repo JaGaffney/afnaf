@@ -50,7 +50,7 @@ export const query = graphql`
           rank
           description
         }
-        availablity {
+        availability {
           rank
           description
         }
@@ -90,7 +90,10 @@ const AnimeTemplate = ({ data }) => {
   const [
     raitingDescriptionContainer,
     setRaitingDescriptionContainer,
-  ] = useState(review.raiting.overall.description)
+  ] = useState({
+    description: review.raiting.overall.description,
+    name: "overall",
+  })
 
   return (
     <Layout>
@@ -140,7 +143,8 @@ const AnimeTemplate = ({ data }) => {
           />
 
           <div className="review-raitings-description">
-            <p>{raitingDescriptionContainer}</p>
+            <h1>{raitingDescriptionContainer.name}</h1>
+            <p>{raitingDescriptionContainer.description}</p>
           </div>
         </div>
       </div>
