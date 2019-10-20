@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SearchBar from "../components/searchBar"
 
 import Filter from "../components/indexComponents/filter"
 import AnimeContainer from "../components/indexComponents/animeContainer"
@@ -43,6 +44,7 @@ const IndexPage = () => {
     }
   `)
 
+  const [searchItem, setSearchItem] = useState("")
   const [filterValues, setFilterValues] = useState({
     parents: false,
     partner: false,
@@ -72,11 +74,11 @@ const IndexPage = () => {
         all: true,
       })
       setShowAll(false)
-      setShowParents(true)
-      setShowPartner(true)
-      setShowFriends(true)
-      setShowKids(true)
-      setShowSolo(true)
+      setShowParents(false)
+      setShowPartner(false)
+      setShowFriends(false)
+      setShowKids(false)
+      setShowSolo(false)
     } else {
       if (!showType) {
         setFilterValues({ ...filterValues, [type]: true })
@@ -91,6 +93,7 @@ const IndexPage = () => {
       <SEO title="Home" />
 
       <div className="anime-container">
+        <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
         <div className="anime-filter-container">
           <Filter
             showType={showAll}
@@ -131,10 +134,10 @@ const IndexPage = () => {
         </div>
 
         <div className="anime-contents-wrapper">
-          {Object.keys(filterValues).map(item => {
+          {Object.keys(filterValues).map((item, index) => {
             if (filterValues[item]) {
               return (
-                <div className="anime-contents">
+                <div className="anime-contents" key={index}>
                   <h1 className="anime-contents-title">{item}</h1>
                   <span className="anime-contents-description">
                     "{FILTER_DATA[item]}"
@@ -143,6 +146,7 @@ const IndexPage = () => {
                     reviews={reviews}
                     filter={item}
                     filterValues={filterValues}
+                    searchItem={searchItem}
                   />
                 </div>
               )

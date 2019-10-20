@@ -16,6 +16,24 @@ const AnimeContainer = props => {
 
           if (title === "Template") {
             return null
+          } else if (props.searchItem !== "") {
+            if (title.toLowerCase().includes(props.searchItem)) {
+              return (
+                <div className="anime-contents-inner" key={index}>
+                  <AnimePreview
+                    title={title}
+                    elevator={elevator}
+                    imageData={imageData}
+                    slug={slug}
+                    tags={tags}
+                    raiting={raiting}
+                    index={index}
+                  />
+                </div>
+              )
+            } else {
+              return null
+            }
           } else if (tags[props.filter] || props.filter === "all") {
             return (
               <div className="anime-contents-inner" key={index}>

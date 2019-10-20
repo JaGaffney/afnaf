@@ -36,7 +36,7 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
               {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
@@ -67,7 +67,7 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
               {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
@@ -98,7 +98,7 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
               {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
@@ -129,7 +129,7 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
               {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
@@ -160,7 +160,7 @@ const RaitingContainer = props => {
                 />
               </td>
             </tr>
-            <ReactTooltip id={type} aria-haspopup={type} html={true}>
+            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
               {TOOL_TIP_DATA[type]}
             </ReactTooltip>
           </>
@@ -216,7 +216,7 @@ const RaitingContainer = props => {
               />
             </td>
           </tr>
-          <ReactTooltip id="overall" aria-haspopup="overall" html={true}>
+          <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
             {TOOL_TIP_DATA.overall}
           </ReactTooltip>
         </tbody>
