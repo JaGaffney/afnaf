@@ -21,11 +21,11 @@ const Header = ({ siteTitle }) => (
         </span>
       </div>
 
-      <ul className="nav-links">
+      {/* <ul className="nav-links">
         <li>
           <Link to="/about/">About</Link>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   </header>
 )

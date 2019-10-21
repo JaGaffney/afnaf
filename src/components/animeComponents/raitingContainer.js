@@ -146,7 +146,7 @@ const RaitingContainer = props => {
               }
               key={index}
             >
-              <td>{type}</td>
+              <td>{type.split("_").join(" ")}</td>
               <td>-</td>
               <td>-</td>
               <td>-</td>

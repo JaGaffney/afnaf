@@ -12,7 +12,7 @@ const Footer = () => {
             <FiFacebook
               vertical-align="middle"
               horizontal-align="middle"
-              size="3em"
+              size="2.5em"
             />
           </a>
         </li>
@@ -21,7 +21,7 @@ const Footer = () => {
             <FiGithub
               vertical-align="middle"
               horizontal-align="middle"
-              size="3em"
+              size="2.5em"
             />
           </a>
         </li>
@@ -30,7 +30,7 @@ const Footer = () => {
             <FiGlobe
               vertical-align="middle"
               horizontal-align="middle"
-              size="3em"
+              size="2.5em"
             />
           </a>
         </li>
@@ -39,7 +39,7 @@ const Footer = () => {
             <FiYoutube
               vertical-align="middle"
               horizontal-align="middle"
-              size="3em"
+              size="2.5em"
             />
           </a>
         </li>
@@ -48,11 +48,17 @@ const Footer = () => {
             <FaDiscord
               vertical-align="middle"
               horizontal-align="middle"
-              size="3em"
+              size="2.5em"
             />
           </a>
         </li>
       </ul>
+      <div className="footer-copyright">
+        <span>
+          © Jon Gaffney{" "}
+          <a href="https://jongaffney.tech/">https://jongaffney.tech/</a>
+        </span>
+      </div>
     </div>
   )
 }

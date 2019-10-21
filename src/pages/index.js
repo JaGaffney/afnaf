@@ -90,7 +90,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="afnaf" />
+      <SEO title="Home" />
 
       <div className="anime-container">
         <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />

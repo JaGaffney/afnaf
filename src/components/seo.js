@@ -27,6 +27,12 @@ function SEO({ description, lang, meta, title }) {
 
   const metaDescription = description || site.siteMetadata.description
 
+  const defaultTitle = site.siteMetadata.title
+
+  if (title === "Home") {
+    title = defaultTitle
+  }
+
   return (
     <Helmet
       htmlAttributes={{
