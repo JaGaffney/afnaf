@@ -38,7 +38,6 @@ module.exports = {
       options: {
         spaceId: "99lzub6zmlxx",
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
       },
     },
     // "gatsby-transformer-json",

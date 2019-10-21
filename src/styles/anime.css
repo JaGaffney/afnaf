@@ -73,6 +73,9 @@
   grid-column: 2;
   grid-row: 1;
 }
+.review-raitings-description h1 {
+  text-transform: capitalize;
+}
 
 .tooltip-list {
   list-style-type: none;

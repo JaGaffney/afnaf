@@ -9,14 +9,14 @@ const SearchBar = props => {
   }
 
   return (
-    <div>
+    <div className="search-container">
+      <FiSearch vertical-align="middle" horizontal-align="middle" size="1rem" />
       <input
         type="text"
         placeholder="Search for an anime..."
         value={props.searchItem || ""}
         onChange={onHandleChange}
       ></input>{" "}
-      <FiSearch vertical-align="middle" horizontal-align="middle" size="1rem" />
     </div>
   )
 }

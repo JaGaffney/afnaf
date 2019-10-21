@@ -75,14 +75,22 @@ main {
 footer {
   padding: 1rem;
   width: 100%;
-  height: 15rem;
+  height: 10rem;
   grid-column: 1 / 4;
   background: var(--green);
-}
-.footer-container ul {
-  list-style: none;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.footer-container {
+  width: 30%;
+  align-self: center;
+}
+.footer-container ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -168,10 +176,9 @@ footer {
 }
 .anime-preview-description {
   padding: 3px;
-  grid-column: 1;
+  grid-column: 1 / 3;
   grid-row: 3;
   font-size: 1rem;
-  font-weight: 900;
   color: var(--accent);
 }
 .anime-preview-raiting {
@@ -201,6 +208,25 @@ footer {
 .filter-button {
 }
 
+/* Searchbar.js */
+.search-container {
+  display: flex;
+  background: #e7e7e7;
+  align-items: center;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+}
+.search-container svg {
+  padding-left: 3px;
+}
+.search-container input {
+  padding-left: 0.5rem;
+  border: none;
+  outline: none;
+  background: #e7e7e7;
+  border-radius: 1.5rem;
+}
+
 @media only screen and (max-width: 1280px) {
   .layout-container {
     grid-template-columns: 5% 90% 5%;
@@ -220,6 +246,7 @@ footer {
   }
   .anime-contents-container {
     flex-direction: column;
+    margin: 0;
   }
   .anime-contents-inner {
     width: 100%;

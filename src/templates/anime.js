@@ -113,9 +113,7 @@ const AnimeTemplate = ({ data }) => {
                       size="2rem"
                     />
                   </a>
-                ) : (
-                  ""
-                )}
+                ) : null}
               </div>
 
               <span>
@@ -123,7 +121,6 @@ const AnimeTemplate = ({ data }) => {
               </span>
             </div>
             <div className="review-details-description">
-              <p>{review.description.description}</p>
               <p>{review.description.description}</p>
             </div>
           </div>
@@ -143,7 +140,7 @@ const AnimeTemplate = ({ data }) => {
           />
 
           <div className="review-raitings-description">
-            <h1>{raitingDescriptionContainer.name}</h1>
+            <h1>{raitingDescriptionContainer.name.split("_").join(" ")}</h1>
             <p>{raitingDescriptionContainer.description}</p>
           </div>
         </div>
