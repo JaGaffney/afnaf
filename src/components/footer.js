@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <ul>
-        <li>
+        {/* <li>
           <a href="https://jongaffney.tech/">
             <FiFacebook
               vertical-align="middle"
@@ -15,7 +15,7 @@ const Footer = () => {
               size="2.5em"
             />
           </a>
-        </li>
+        </li> */}
         <li>
           <a href="https://github.com/JaGaffney/afnaf">
             <FiGithub

@@ -25,7 +25,7 @@ const IndexPage = () => {
               parents
               partner
               friends
-              kid
+              kids
               solo
             }
             raiting {
