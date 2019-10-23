@@ -117,7 +117,8 @@ const AnimeTemplate = ({ data }) => {
               </div>
 
               <span>
-                Genre: <i>{review.genre.genre.map(item => item + ", ")}</i>
+                Genre:{" "}
+                <i>{review.genre.genre.map(item => item + ", ").sort()}</i>
               </span>
             </div>
             <div className="review-details-description">
@@ -133,6 +134,7 @@ const AnimeTemplate = ({ data }) => {
           </div>
         </div>
 
+        <div className="review-seperator"></div>
         <div className="review-raitings">
           <RaitingContainer
             raitingData={review.raiting}

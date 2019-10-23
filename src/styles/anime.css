@@ -7,6 +7,20 @@
 .review-container p {
   font-size: 1.2rem;
 }
+.review-container h1 {
+  color: var(--dominant);
+}
+.review-container span {
+  font-size: 0.9rem;
+}
+
+.review-seperator {
+  margin: 1rem 0;
+  align-self: center;
+  width: 80%;
+  height: 1px;
+  background: var(--dark);
+}
 
 .review-details {
   width: 100%;

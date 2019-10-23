@@ -62,6 +62,8 @@ const IndexPage = () => {
 
   const reviews = data.allContentfulReview.edges
 
+  console.log(reviews)
+
   const onFilterHandler = (type, showType) => {
     // resets back to default when reset is selected
     if (type === "reset") {
@@ -137,11 +139,16 @@ const IndexPage = () => {
           {Object.keys(filterValues).map((item, index) => {
             if (filterValues[item]) {
               return (
-                <div className="anime-contents" key={index}>
-                  <h1 className="anime-contents-title">{item}</h1>
-                  <span className="anime-contents-description">
-                    "{FILTER_DATA[item]}"
-                  </span>
+                <div className="anime-contents" key={item + index}>
+                  {item !== "all" ? (
+                    <>
+                      <h1 className="anime-contents-title">{item}</h1>
+                      <span className="anime-contents-description">
+                        "{FILTER_DATA[item]}"
+                      </span>
+                    </>
+                  ) : null}
+
                   <AnimeContainer
                     reviews={reviews}
                     filter={item}

@@ -193,7 +193,7 @@ const RaitingContainer = props => {
               return null
             }
           })}
-          <br />
+          <tr />
           <tr
             onClick={() =>
               props.onRaitingHandler({
@@ -216,11 +216,11 @@ const RaitingContainer = props => {
               />
             </td>
           </tr>
-          <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
-            {TOOL_TIP_DATA.overall}
-          </ReactTooltip>
         </tbody>
       </table>
+      <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
+        {TOOL_TIP_DATA.overall}
+      </ReactTooltip>{" "}
     </div>
   )
 }
