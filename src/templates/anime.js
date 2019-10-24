@@ -142,7 +142,11 @@ const AnimeTemplate = ({ data }) => {
           />
 
           <div className="review-raitings-description">
-            <h1>{raitingDescriptionContainer.name.split("_").join(" ")}</h1>
+            <h1>
+              {raitingDescriptionContainer.name === "overall"
+                ? "Recommendation"
+                : raitingDescriptionContainer.name.split("_").join(" ")}
+            </h1>
             <p>{raitingDescriptionContainer.description}</p>
           </div>
         </div>

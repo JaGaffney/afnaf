@@ -91,6 +91,21 @@
   text-transform: capitalize;
 }
 
+/* .tooltip-container {
+  display: flex;
+} */
+
+.__react_component_tooltip {
+  text-align: left;
+  max-width: 35rem;
+}
+.__react_component_tooltip h3 {
+  text-align: center;
+}
+.__react_component_tooltip p {
+  font-size: 0.8rem;
+}
+
 .tooltip-list {
   list-style-type: none;
 }
