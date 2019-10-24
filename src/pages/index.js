@@ -62,8 +62,6 @@ const IndexPage = () => {
 
   const reviews = data.allContentfulReview.edges
 
-  console.log(reviews)
-
   const onFilterHandler = (type, showType) => {
     // resets back to default when reset is selected
     if (type === "reset") {
