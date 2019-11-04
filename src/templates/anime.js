@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import { FiYoutube } from "react-icons/fi"
+import { FiYoutube, FiList, FiColumns } from "react-icons/fi"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import RaitingContainer from "../components/animeComponents/raitingContainer"
+import RaitingContainerTable from "../components/animeComponents/raitingContainerTable"
+import RaitingContainerCards from "../components/animeComponents/raitingContainerCards"
 
 export const query = graphql`
   query($slug: String!) {
@@ -95,6 +96,8 @@ const AnimeTemplate = ({ data }) => {
     name: "overall",
   })
 
+  const [tableType, setTableType] = useState(true)
+
   return (
     <Layout>
       <SEO title={review.title} />
@@ -136,12 +139,34 @@ const AnimeTemplate = ({ data }) => {
 
         <div className="review-seperator"></div>
         <div className="review-raitings">
-          <RaitingContainer
-            raitingData={review.raiting}
-            onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
-          />
+          {tableType === true ? (
+            <RaitingContainerTable
+              raitingData={review.raiting}
+              onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
+            />
+          ) : (
+            <RaitingContainerCards raitingData={review.raiting} />
+          )}
 
           <div className="review-raitings-description">
+            <div
+              className="review-tableType"
+              onClick={() => setTableType(!tableType)}
+            >
+              {tableType === true ? (
+                <FiColumns
+                  vertical-align="middle"
+                  horizontal-align="middle"
+                  size="1.3rem"
+                />
+              ) : (
+                <FiList
+                  vertical-align="middle"
+                  horizontal-align="middle"
+                  size="1.3rem"
+                />
+              )}
+            </div>
             <h1>
               {raitingDescriptionContainer.name === "overall"
                 ? "Recommendation"

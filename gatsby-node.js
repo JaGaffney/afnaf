@@ -20,7 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   reviews.forEach(({ node: { slug } }) => {
     actions.createPage({
-      path: `/${slug}/`,
+      path: `/anime/${slug}/`,
       component: require.resolve("./src/templates/anime.js"),
       context: { slug },
     })

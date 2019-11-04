@@ -9,7 +9,7 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
   const tagValues = Object.keys(tags).filter(item => tags[item] !== false)
 
   return (
-    <Link to={`/${slug}/`} className="anime-preview">
+    <Link to={`/anime/${slug}/`} className="anime-preview">
       <Image
         fluid={imageData}
         alt={title}

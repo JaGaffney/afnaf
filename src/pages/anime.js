@@ -10,7 +10,7 @@ import AnimeContainer from "../components/indexComponents/animeContainer"
 
 import { FILTER_DATA } from "../components/data/filter-data"
 
-const IndexPage = () => {
+const AnimePage = () => {
   const data = useStaticQuery(graphql`
     {
       allContentfulReview {
@@ -164,4 +164,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default AnimePage

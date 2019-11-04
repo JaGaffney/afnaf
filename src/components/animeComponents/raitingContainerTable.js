@@ -4,7 +4,7 @@ import { FiHelpCircle } from "react-icons/fi"
 
 import { TOOL_TIP_DATA } from "../data/tooltip-data"
 
-const RaitingContainer = props => {
+const RaitingContainerTable = props => {
   const raitingTableGenerator = (type, value, index) => {
     if (type === "overall") {
       return null
@@ -225,4 +225,4 @@ const RaitingContainer = props => {
   )
 }
 
-export default RaitingContainer
+export default RaitingContainerTable

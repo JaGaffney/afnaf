@@ -3,8 +3,8 @@ export const TOOL_TIP_DATA = {
   <h3>Recommendation</h3>
   <p>How good is the anime to watch as a non-anime fan. <i>NOTE: this doesn’t reflect on how good the anime is in general only on how good of a recommendation it is.</i></p>
   <ul class="tooltip-list"> 
-    <li>0-2: <strong>Don't recommend to anyone unless they are already an anime fan.</strong></li> 
-    <li>3-5: <strong>More of a 3-4th anime to watch than a first.</strong></li>
+    <li>1-2: <strong>Don't recommend to anyone unless they are already an anime fan.</strong></li> 
+    <li>3-5: <strong>More of a 5th-6th anime to watch than a first.</strong></li>
     <li>6-7: <strong>Strong choice to recommend but use your own judgement based on their personality and what the anime is.</strong></li>
     <li>8-9: <strong>Very good recommendation choice, highly likely they will finish this show even if they don't watch more.</strong></li>
     <li>10: <strong>Amazing, very easy to convert someone to watching anime from showing them this.</strong></li>
