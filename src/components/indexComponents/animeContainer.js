@@ -3,10 +3,25 @@ import React from "react"
 import AnimePreview from "./animePreview"
 
 const AnimeContainer = props => {
+  // sorting alg
+  const sortedByRankValues = Object.keys(props.reviews)
+    .map(item => {
+      return {
+        title: props.reviews[item].node.title,
+        rank: props.reviews[item].node.raiting.overall.rank,
+        elevator: props.reviews[item].node.elevator,
+        slug: props.reviews[item].node.slug,
+        tags: props.reviews[item].node.tags,
+        image: props.reviews[item].node.image,
+        raiting: props.reviews[item].node.raiting,
+      }
+    })
+    .sort((a, b) => b.rank - a.rank)
+
   if (props.filterValues[props.filter]) {
     return (
       <div className="anime-contents-container">
-        {props.reviews.map(({ node: review }, index) => {
+        {sortedByRankValues.map((review, index) => {
           const title = review.title
           const elevator = review.elevator
           const slug = review.slug

@@ -7,8 +7,11 @@ import SEO from "../components/seo"
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <Link to="/">Go back</Link>
+    <h1>ERROR: PAGE NOT FOUND</h1>
+    <p>Something seems to have gone wrong =(, go back to the homepage maybe?</p>
+    <Link to="/">
+      <button className="btn">Go back</button>
+    </Link>
   </Layout>
 )
 

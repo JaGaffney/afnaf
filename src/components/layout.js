@@ -6,8 +6,9 @@ import Header from "./header"
 import Footer from "./footer"
 
 import "./layout.css"
-import "../styles/header.css"
 import "../styles/index.css"
+import "../styles/generics.css"
+import "../styles/header.css"
 import "../styles/anime.css"
 
 const Layout = ({ children }) => {

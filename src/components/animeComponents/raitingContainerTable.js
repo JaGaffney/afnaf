@@ -1,8 +1,5 @@
 import React from "react"
-import ReactTooltip from "react-tooltip"
-import { FiHelpCircle } from "react-icons/fi"
-
-import { TOOL_TIP_DATA } from "../data/tooltip-data"
+import ToolTipI from "../toolTipI"
 
 const RaitingContainerTable = props => {
   const raitingTableGenerator = (type, value, index) => {
@@ -12,158 +9,113 @@ const RaitingContainerTable = props => {
     switch (value.rank) {
       case 1:
         return (
-          <>
-            <tr
-              onClick={() =>
-                props.onRaitingHandler({
-                  description: value.description,
-                  name: type,
-                })
-              }
-              key={index}
-            >
-              <td>{type.split("_").join(" ")}</td>
-              <td>{value.rank}</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td data-tip data-for={type}>
-                <FiHelpCircle
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1rem"
-                />
-              </td>
-            </tr>
-            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
-              {TOOL_TIP_DATA[type]}
-            </ReactTooltip>
-          </>
+          <tr
+            onClick={() =>
+              props.onRaitingHandler({
+                description: value.description,
+                name: type,
+              })
+            }
+            key={index}
+          >
+            <td>{type.split("_").join(" ")}</td>
+            <td>{value.rank}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <ToolTipI type={type} />
+            </td>
+          </tr>
         )
       case 2:
         return (
-          <>
-            <tr
-              onClick={() =>
-                props.onRaitingHandler({
-                  description: value.description,
-                  name: type,
-                })
-              }
-              key={index}
-            >
-              <td>{type.split("_").join(" ")}</td>
-              <td>-</td>
-              <td>{value.rank}</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td data-tip data-for={type}>
-                <FiHelpCircle
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1rem"
-                />
-              </td>
-            </tr>
-            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
-              {TOOL_TIP_DATA[type]}
-            </ReactTooltip>
-          </>
+          <tr
+            onClick={() =>
+              props.onRaitingHandler({
+                description: value.description,
+                name: type,
+              })
+            }
+            key={index}
+          >
+            <td>{type.split("_").join(" ")}</td>
+            <td>-</td>
+            <td>{value.rank}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <ToolTipI type={type} />
+            </td>
+          </tr>
         )
       case 3:
         return (
-          <>
-            <tr
-              onClick={() =>
-                props.onRaitingHandler({
-                  description: value.description,
-                  name: type,
-                })
-              }
-              key={index}
-            >
-              <td>{type.split("_").join(" ")}</td>
-              <td>-</td>
-              <td>-</td>
-              <td>{value.rank}</td>
-              <td>-</td>
-              <td>-</td>
-              <td data-tip data-for={type}>
-                <FiHelpCircle
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1rem"
-                />
-              </td>
-            </tr>
-            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
-              {TOOL_TIP_DATA[type]}
-            </ReactTooltip>
-          </>
+          <tr
+            onClick={() =>
+              props.onRaitingHandler({
+                description: value.description,
+                name: type,
+              })
+            }
+            key={index}
+          >
+            <td>{type.split("_").join(" ")}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{value.rank}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+              <ToolTipI type={type} />
+            </td>
+          </tr>
         )
       case 4:
         return (
-          <>
-            <tr
-              onClick={() =>
-                props.onRaitingHandler({
-                  description: value.description,
-                  name: type,
-                })
-              }
-              key={index}
-            >
-              <td>{type.split("_").join(" ")}</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>{value.rank}</td>
-              <td>-</td>
-              <td data-tip data-for={type}>
-                <FiHelpCircle
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1rem"
-                />
-              </td>
-            </tr>
-            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
-              {TOOL_TIP_DATA[type]}
-            </ReactTooltip>
-          </>
+          <tr
+            onClick={() =>
+              props.onRaitingHandler({
+                description: value.description,
+                name: type,
+              })
+            }
+            key={index}
+          >
+            <td>{type.split("_").join(" ")}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{value.rank}</td>
+            <td>-</td>
+            <td>
+              <ToolTipI type={type} />
+            </td>
+          </tr>
         )
       case 5:
         return (
-          <>
-            <tr
-              onClick={() =>
-                props.onRaitingHandler({
-                  description: value.description,
-                  name: type,
-                })
-              }
-              key={index}
-            >
-              <td>{type.split("_").join(" ")}</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>-</td>
-              <td>{value.rank}</td>
-              <td data-tip data-for={type}>
-                <FiHelpCircle
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1rem"
-                />
-              </td>
-            </tr>
-            <ReactTooltip id={type} aria-haspopup={"dialog"} html={true}>
-              {TOOL_TIP_DATA[type]}
-            </ReactTooltip>
-          </>
+          <tr
+            onClick={() =>
+              props.onRaitingHandler({
+                description: value.description,
+                name: type,
+              })
+            }
+            key={index}
+          >
+            <td>{type.split("_").join(" ")}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+            <td>{value.rank}</td>
+            <td>
+              <ToolTipI type={type} />
+            </td>
+          </tr>
         )
       default:
         return null
@@ -208,19 +160,12 @@ const RaitingContainerTable = props => {
             <td></td>
             <td></td>
             <td>{props.raitingData.overall.rank}/10</td>
-            <td data-tip data-for="overall">
-              <FiHelpCircle
-                vertical-align="middle"
-                horizontal-align="middle"
-                size="1rem"
-              />
+            <td>
+              <ToolTipI type={"overall"} />
             </td>
           </tr>
         </tbody>
       </table>
-      <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
-        {TOOL_TIP_DATA.overall}
-      </ReactTooltip>{" "}
     </div>
   )
 }
