@@ -234,6 +234,23 @@ footer {
 .tooltip-component-container {
   text-transform: none !important;
 }
+.__react_component_tooltip {
+  text-align: left;
+  max-width: 35rem;
+}
+.__react_component_tooltip h3 {
+  text-align: center;
+}
+.__react_component_tooltip p {
+  font-size: 0.8rem;
+}
+
+.tooltip-list {
+  list-style-type: none;
+}
+.tooltip-list li {
+  margin-bottom: 0;
+}
 
 @media only screen and (max-width: 1280px) {
   .layout-container {

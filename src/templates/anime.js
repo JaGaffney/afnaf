@@ -145,7 +145,10 @@ const AnimeTemplate = ({ data }) => {
               onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
             />
           ) : (
-            <RaitingContainerCards raitingData={review.raiting} />
+            <RaitingContainerCards
+              raitingData={review.raiting}
+              onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
+            />
           )}
 
           <div className="review-raitings-description">

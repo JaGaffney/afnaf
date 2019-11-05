@@ -1,21 +1,42 @@
 import React from "react"
-import ReactTooltip from "react-tooltip"
-import { FiHelpCircle } from "react-icons/fi"
-
-import { TOOL_TIP_DATA } from "../data/tooltip-data"
+import ToolTipI from "../toolTipI"
 
 const RaitingContainerCards = props => {
+  const raitingCardGenerator = (type, value, index) => {
+    console.log(type)
+    console.log(value)
+    return (
+      <div
+        className="review-raiting-card"
+        onClick={() =>
+          props.onRaitingHandler({
+            description: value.description,
+            name: type,
+          })
+        }
+        key={type + index}
+      >
+        <div className="review-raiting-card-inner">
+          <h3>{type.split("_").join(" ")}</h3>
+          <h1>{value.rank}</h1>
+
+          <ToolTipI type={type} />
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="review-raiting-ranking">
       <div className="review-raiting-card-container">
-        <div className="review-raiting-card">
-          <h1>title</h1>
-          <div>
-            <span>Raiting</span>
-          </div>
-        </div>
+        {Object.keys(props.raitingData).map((item, index) => {
+          if (props.raitingData[item] != null) {
+            return raitingCardGenerator(item, props.raitingData[item], index)
+          } else {
+            return null
+          }
+        })}
       </div>
-      <h1>soon tm</h1>
     </div>
   )
 }
