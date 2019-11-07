@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Image from "gatsby-image"
 
 import ReactTooltip from "react-tooltip"
-import { TOOL_TIP_DATA } from "../data/tooltip-data"
+import { TOOL_TIP_DATA_ANIME } from "../data/tooltip-data"
 
 const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
   const tagValues = Object.keys(tags).filter(item => tags[item] !== false)
@@ -23,7 +23,7 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
         {raiting.overall.rank}/10
       </span>
       <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
-        {TOOL_TIP_DATA.overall}
+        {TOOL_TIP_DATA_ANIME.overall}
       </ReactTooltip>{" "}
       <div className="anime-preview-tags-container">
         {tagValues.map((item, index) => {

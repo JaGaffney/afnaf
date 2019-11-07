@@ -2,7 +2,7 @@ import React from "react"
 import ReactTooltip from "react-tooltip"
 import { FiHelpCircle } from "react-icons/fi"
 
-import { TOOL_TIP_DATA } from "./data/tooltip-data"
+import { TOOL_TIP_DATA_ANIME } from "./data/tooltip-data"
 
 const ToolTipI = props => {
   return (
@@ -22,7 +22,7 @@ const ToolTipI = props => {
         effect="solid"
         className="tooltip-component-container"
       >
-        {TOOL_TIP_DATA[props.type]}
+        {TOOL_TIP_DATA_ANIME[props.type]}
       </ReactTooltip>
     </>
   )

@@ -1,21 +1,12 @@
 import React from "react"
 
-import { FiFacebook, FiGithub, FiGlobe, FiYoutube } from "react-icons/fi"
+import { FiGithub, FiGlobe, FiYoutube } from "react-icons/fi"
 import { FaDiscord } from "react-icons/fa"
 
 const Footer = () => {
   return (
     <div className="footer-container">
       <ul>
-        {/* <li>
-          <a href="https://jongaffney.tech/">
-            <FiFacebook
-              vertical-align="middle"
-              horizontal-align="middle"
-              size="2.5em"
-            />
-          </a>
-        </li> */}
         <li>
           <a href="https://github.com/JaGaffney/afnaf">
             <FiGithub

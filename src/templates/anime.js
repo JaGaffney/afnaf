@@ -107,9 +107,8 @@ const AnimeTemplate = ({ data }) => {
             <div className="review-details-title">
               <h1>{review.title}</h1>
               <div>
-                {review.url !== "" ? (
+                {review.url.length > 3 ? (
                   <a href={review.url} className="youtube-icon">
-                    {" "}
                     <FiYoutube
                       vertical-align="middle"
                       horizontal-align="middle"

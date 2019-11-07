@@ -1,4 +1,4 @@
-export const TOOL_TIP_DATA = {
+export const TOOL_TIP_DATA_ANIME = {
   overall: `
   <h3>Recommendation</h3>
   <p>How good is the anime to watch as a non-anime fan. <i>NOTE: this doesn’t reflect on how good the anime is in general only on how good of a recommendation it is.</i></p>
