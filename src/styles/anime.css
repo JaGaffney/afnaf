@@ -100,18 +100,22 @@
 .review-raiting-card {
   border: solid 3px var(--pink);
   border-radius: 2rem;
-  margin: 1rem;
-  height: 18rem;
-  width: 10rem;
-  max-width: 10rem;
+  margin: 0.5rem;
+  height: 8rem;
+  width: 7rem;
+  cursor: pointer;
 }
 .review-raiting-card-inner {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+.review-raiting-card-inner h4,
+.review-raiting-card-inner h1 {
+  margin: 0;
 }
 
 @media only screen and (max-width: 1280px) {

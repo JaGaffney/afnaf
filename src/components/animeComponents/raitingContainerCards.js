@@ -17,7 +17,7 @@ const RaitingContainerCards = props => {
         key={type + index}
       >
         <div className="review-raiting-card-inner">
-          <h3>{type.split("_").join(" ")}</h3>
+          <h4>{type.split("_").join(" ")}</h4>
           <h1>{value.rank}</h1>
 
           <ToolTipI type={type} />
