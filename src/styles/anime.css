@@ -7,8 +7,11 @@
 .review-container p {
   font-size: 1.2rem;
 }
-.review-container h1 {
+.review-container h1,
+.review-container h2,
+.review-container h4 {
   color: var(--dominant);
+  text-transform: capitalize;
 }
 .review-container span {
   font-size: 0.9rem;
@@ -39,8 +42,6 @@
 }
 .review-details-title {
   margin-bottom: 1rem;
-}
-.review-details-description {
 }
 .review-details-image-container {
   order: 3;
@@ -79,10 +80,9 @@
 }
 
 .review-raitings-description {
-  margin: 0 1rem;
-}
-.review-raitings-description h1 {
-  text-transform: capitalize;
+  min-width: 80%;
+  padding: 0 1rem;
+  border-left: solid 1px var(--dark);
 }
 
 .review-raiting-card-container {
@@ -90,15 +90,11 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border-right: solid 1px var(--dark);
 }
 .review-raiting-card {
-  /* border: solid 3px var(--pink);
-  border-radius: 2rem; */
   margin: 0.5rem;
-  height: 8rem;
+  height: 4rem;
   width: 7rem;
-  cursor: pointer;
 }
 .review-raiting-card-inner {
   width: 100%;
@@ -113,6 +109,10 @@
   margin: 0;
 }
 
+.hidden-seperator {
+  display: none;
+}
+
 @media only screen and (max-width: 1280px) {
   .review-details {
     display: flex;
@@ -122,8 +122,13 @@
     order: 1;
   }
 
-  .review-raiting-card-container {
+  .review-raitings-description {
     border: none;
+    padding: 1rem 0;
+  }
+
+  .hidden-seperator {
+    display: inline;
   }
 
   .review-raitings {

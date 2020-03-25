@@ -150,15 +150,17 @@ const AnimeTemplate = ({ data }) => {
         <div className="review-seperator"></div>
         <div className="review-raitings">
           <RaitingContainerCards raitingData={review.raiting} />
+
+          <div className="review-seperator hidden-seperator"></div>
           <div className="review-raitings-description">
             {Object.keys(review.raiting).map((name, index) => {
               return (
                 <React.Fragment key={name + index}>
-                  <h1>
+                  <h2>
                     {name === "overall"
                       ? "Recommendation"
                       : name.split("_").join(" ")}
-                  </h1>
+                  </h2>
                   <p>{review.raiting[name]["description"]}</p>
                 </React.Fragment>
               )
