@@ -1,12 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import { FiYoutube, FiList, FiColumns } from "react-icons/fi"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import RaitingContainerTable from "../components/animeComponents/raitingContainerTable"
 import RaitingContainerCards from "../components/animeComponents/raitingContainerCards"
+
+import { FiYoutube } from "react-icons/fi"
+import Chip from "@material-ui/core/Chip"
+import Rating from "@material-ui/lab/Rating"
 
 export const query = graphql`
   query($slug: String!) {
@@ -88,16 +90,6 @@ const AnimeTemplate = ({ data }) => {
   const review = data.contentfulReview
   const imageData = review.image.fluid
 
-  const [
-    raitingDescriptionContainer,
-    setRaitingDescriptionContainer,
-  ] = useState({
-    description: review.raiting.overall.description,
-    name: "overall",
-  })
-
-  const [tableType, setTableType] = useState(true)
-
   return (
     <Layout>
       <SEO title={review.title} />
@@ -106,6 +98,12 @@ const AnimeTemplate = ({ data }) => {
           <div className="review-details-content">
             <div className="review-details-title">
               <h1>{review.title}</h1>
+              <Rating
+                name="overall-raiting-10"
+                value={review.raiting["overall"]["rank"]}
+                max={10}
+                readOnly
+              />
               <div>
                 {review.url.length > 3 ? (
                   <a href={review.url} className="youtube-icon">
@@ -120,7 +118,20 @@ const AnimeTemplate = ({ data }) => {
 
               <span>
                 Genre:{" "}
-                <i>{review.genre.genre.map(item => item + ", ").sort()}</i>
+                <i>
+                  {review.genre.genre
+                    .map((item, index) => (
+                      <React.Fragment key={item + index + "tag"}>
+                        <Chip
+                          size="small"
+                          label={item}
+                          color="primary"
+                          variant="outlined"
+                        />{" "}
+                      </React.Fragment>
+                    ))
+                    .sort()}
+                </i>
               </span>
             </div>
             <div className="review-details-description">
@@ -138,43 +149,20 @@ const AnimeTemplate = ({ data }) => {
 
         <div className="review-seperator"></div>
         <div className="review-raitings">
-          {tableType === true ? (
-            <RaitingContainerTable
-              raitingData={review.raiting}
-              onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
-            />
-          ) : (
-            <RaitingContainerCards
-              raitingData={review.raiting}
-              onRaitingHandler={setRaitingDescriptionContainer.bind(null)}
-            />
-          )}
-
+          <RaitingContainerCards raitingData={review.raiting} />
           <div className="review-raitings-description">
-            <div
-              className="review-tableType"
-              onClick={() => setTableType(!tableType)}
-            >
-              {tableType === true ? (
-                <FiColumns
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1.3rem"
-                />
-              ) : (
-                <FiList
-                  vertical-align="middle"
-                  horizontal-align="middle"
-                  size="1.3rem"
-                />
-              )}
-            </div>
-            <h1>
-              {raitingDescriptionContainer.name === "overall"
-                ? "Recommendation"
-                : raitingDescriptionContainer.name.split("_").join(" ")}
-            </h1>
-            <p>{raitingDescriptionContainer.description}</p>
+            {Object.keys(review.raiting).map((name, index) => {
+              return (
+                <React.Fragment key={name + index}>
+                  <h1>
+                    {name === "overall"
+                      ? "Recommendation"
+                      : name.split("_").join(" ")}
+                  </h1>
+                  <p>{review.raiting[name]["description"]}</p>
+                </React.Fragment>
+              )
+            })}
           </div>
         </div>
       </div>

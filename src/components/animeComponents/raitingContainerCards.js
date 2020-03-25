@@ -1,26 +1,20 @@
 import React from "react"
 import ToolTipI from "../toolTipI"
 
+import Rating from "@material-ui/lab/Rating"
+
 const RaitingContainerCards = props => {
   const raitingCardGenerator = (type, value, index) => {
-    console.log(type)
-    console.log(value)
+    if (type === "overall") return
+
     return (
-      <div
-        className="review-raiting-card"
-        onClick={() =>
-          props.onRaitingHandler({
-            description: value.description,
-            name: type,
-          })
-        }
-        key={type + index}
-      >
+      <div className="review-raiting-card" key={type + index}>
         <div className="review-raiting-card-inner">
           <h4>{type.split("_").join(" ")}</h4>
-          <h1>{value.rank}</h1>
-
-          <ToolTipI type={type} />
+          <div>
+            <ToolTipI type={type} />
+            <Rating name="rank" value={value.rank} readOnly />
+          </div>
         </div>
       </div>
     )

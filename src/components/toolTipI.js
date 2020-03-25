@@ -7,13 +7,16 @@ import { TOOL_TIP_DATA_ANIME } from "./data/tooltip-data"
 const ToolTipI = props => {
   return (
     <>
-      <div data-tip data-for={`tooltip-component-${props.type}`}>
+      <>
         <FiHelpCircle
           vertical-align="middle"
           horizontal-align="middle"
-          size="1em"
+          size="0.8em"
+          data-tip
+          data-for={`tooltip-component-${props.type}`}
+          style={{ margin: "0 0.1rem" }}
         />
-      </div>
+      </>
 
       <ReactTooltip
         id={`tooltip-component-${props.type}`}

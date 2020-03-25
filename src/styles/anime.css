@@ -56,15 +56,11 @@
 .review-raitings {
   margin: 1rem 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-template-rows: 100%;
+  display: flex;
 }
 
 .review-raiting-ranking {
-  width: 100%;
-  grid-column: 1;
-  grid-row: 1;
+  width: 50%;
   text-transform: capitalize;
 }
 .review-raiting-ranking-table {
@@ -84,8 +80,6 @@
 
 .review-raitings-description {
   margin: 0 1rem;
-  grid-column: 2;
-  grid-row: 1;
 }
 .review-raitings-description h1 {
   text-transform: capitalize;
@@ -135,6 +129,10 @@
   .review-raitings {
     display: flex;
     flex-direction: column;
+  }
+
+  .review-raiting-ranking {
+    width: 100%;
   }
 }
 
