@@ -20,9 +20,8 @@
   --gray900: #1a202c;
 
   --dominant: var(--pink);
-  --accent: var(--red);
+  --accent: var(--blue);
   --third: var(--green);
 
   --background-main: var(--gray200);
-  --background-alt: var(--blue);
 }

@@ -135,7 +135,7 @@ footer {
 }
 .anime-contents-description {
   font-style: italic;
-  color: var(--red);
+  color: var(--accent);
 }
 .anime-contents-container {
   width: 100%;
