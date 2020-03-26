@@ -1,4 +1,4 @@
 .MuiChip-outlinedPrimary {
-  color: var(--accent) !important;
-  border-color: var(--accent) !important;
+  color: var(--gray900) !important;
+  border-color: var(--gray900) !important;
 }

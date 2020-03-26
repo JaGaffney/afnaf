@@ -10,7 +10,7 @@
 .review-container h1,
 .review-container h2,
 .review-container h4 {
-  color: var(--dominant);
+  color: var(--blue);
   text-transform: capitalize;
 }
 .review-container span {
@@ -50,7 +50,7 @@
 }
 .review-details-image {
   height: 100%;
-  max-height: 40rem;
+  max-height: 30rem;
   width: 100%;
 }
 
@@ -92,7 +92,7 @@
   flex-wrap: wrap;
 }
 .review-raiting-card {
-  margin: 0.5rem;
+  margin: 0 0.5rem 1rem 0.5rem;
   height: 4rem;
   width: 7rem;
 }
@@ -107,6 +107,10 @@
 .review-raiting-card-inner h4,
 .review-raiting-card-inner h1 {
   margin: 0;
+}
+
+.review-raiting-card-inner h4 {
+  color: var(--dominant);
 }
 
 .hidden-seperator {
