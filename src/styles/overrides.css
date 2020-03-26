@@ -2,3 +2,7 @@
   color: var(--gray900) !important;
   border-color: var(--gray900) !important;
 }
+
+.MuiRating-iconEmpty {
+  color: var(--gray400) !important;
+}

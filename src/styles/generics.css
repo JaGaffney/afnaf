@@ -164,6 +164,7 @@ footer {
   border-radius: 20px;
   box-shadow: 0 0 4px var(--gray400);
   padding: 0 0 10px 0;
+  background: var(--gray100);
 }
 .anime-preview-image {
   border-radius: 20px 20px 0 0;
@@ -172,8 +173,9 @@ footer {
 }
 .anime-preview-title {
   padding: 3px;
-  margin: 0;
-  font-size: 1rem;
+  margin: 0.3rem 0 0 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.4px;
   color: var(--dominant);
 }
 .anime-preview-description {
@@ -181,8 +183,6 @@ footer {
   font-size: 0.9rem;
   color: var(--gray800);
   min-height: 3rem;
-}
-.anime-preview-raiting {
 }
 
 .anime-preview-tags-container {
