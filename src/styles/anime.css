@@ -30,6 +30,12 @@
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
+  background: var(--gray700);
+  color: var(--gray200);
+  margin: 1rem 0;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--gray600);
 }
 .review-details-content {
   order: 2;
@@ -43,6 +49,9 @@
 .review-details-title {
   margin-bottom: 1rem;
 }
+.review-details-title h1 {
+  color: var(--gray100);
+}
 .review-details-image-container {
   order: 3;
   grid-column: 1;
@@ -52,12 +61,19 @@
   height: 100%;
   max-height: 30rem;
   width: 100%;
+  border-radius: 20px;
 }
 
 .review-raitings {
   margin: 1rem 0;
   width: 100%;
   display: flex;
+  background: var(--gray100);
+  color: var(--gray800);
+  margin: 3rem 0;
+  padding: 2rem 1rem 2rem 0;
+  border-radius: 20px;
+  box-shadow: 0 0 10px var(--gray600);
 }
 
 .review-raiting-ranking {
@@ -65,7 +81,6 @@
   text-transform: capitalize;
 }
 .review-raiting-ranking-table {
-  /* border: solid 3px var(--dominant); */
   color: var(--dominant);
   text-align: center;
   background: var(--light-pink-seethrough);
@@ -80,9 +95,9 @@
 }
 
 .review-raitings-description {
-  min-width: 80%;
+  min-width: 75%;
   padding: 0 1rem;
-  border-left: solid 1px var(--dark);
+  border-left: solid 4px var(--gray400);
 }
 
 .review-raiting-card-container {
@@ -115,6 +130,11 @@
 
 .hidden-seperator {
   display: none;
+}
+
+.dark-chip {
+  color: var(--gray200) !important;
+  border-color: var(--gray200) !important;
 }
 
 @media only screen and (max-width: 1280px) {

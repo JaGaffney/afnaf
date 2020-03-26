@@ -127,8 +127,8 @@ const AnimeTemplate = ({ data }) => {
                         <Chip
                           size="small"
                           label={item}
-                          color="primary"
                           variant="outlined"
+                          className="dark-chip"
                         />{" "}
                       </React.Fragment>
                     ))
@@ -149,7 +149,6 @@ const AnimeTemplate = ({ data }) => {
           </div>
         </div>
 
-        <div className="review-seperator"></div>
         <div className="review-raitings">
           <RaitingContainerCards raitingData={review.raiting} />
 
