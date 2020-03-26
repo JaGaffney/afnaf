@@ -10,7 +10,12 @@ const SearchBar = props => {
 
   return (
     <div className="search-container">
-      <FiSearch vertical-align="middle" horizontal-align="middle" size="1rem" />
+      <FiSearch
+        vertical-align="middle"
+        horizontal-align="middle"
+        size="1rem"
+        style={{ color: "var(--gray600)" }}
+      />
       <input
         type="text"
         placeholder="Search for an anime..."

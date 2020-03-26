@@ -7,7 +7,7 @@ const Filter = props => {
   }
   return (
     <div
-      className={`btn filter-button ${activeButton}`}
+      className={`filter-button ${activeButton}`}
       onClick={() => {
         props.onShowTypeHandler(!props.showType)
         props.onFilterHandler(props.type, props.showType)

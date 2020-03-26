@@ -93,44 +93,46 @@ const IndexPage = () => {
       <SEO title="Anime" />
 
       <div className="anime-container">
-        <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
-        <div className="anime-filter-container">
-          <Filter
-            showType={showAll}
-            onShowTypeHandler={setShowAll}
-            type={"reset"}
-            onFilterHandler={onFilterHandler}
-          />
-          <Filter
-            showType={showParents}
-            onShowTypeHandler={setShowParents}
-            type={"parents"}
-            onFilterHandler={onFilterHandler}
-          />
-          <Filter
-            showType={showPartner}
-            onShowTypeHandler={setShowPartner}
-            type={"partner"}
-            onFilterHandler={onFilterHandler}
-          />
-          <Filter
-            showType={showFriends}
-            onShowTypeHandler={setShowFriends}
-            type={"friends"}
-            onFilterHandler={onFilterHandler}
-          />
-          <Filter
-            showType={showKids}
-            onShowTypeHandler={setShowKids}
-            type={"kids"}
-            onFilterHandler={onFilterHandler}
-          />
-          <Filter
-            showType={showSolo}
-            onShowTypeHandler={setShowSolo}
-            type={"solo"}
-            onFilterHandler={onFilterHandler}
-          />
+        <div className="anime-banner">
+          <div className="anime-filter-container">
+            <Filter
+              showType={showAll}
+              onShowTypeHandler={setShowAll}
+              type={"reset"}
+              onFilterHandler={onFilterHandler}
+            />
+            <Filter
+              showType={showParents}
+              onShowTypeHandler={setShowParents}
+              type={"parents"}
+              onFilterHandler={onFilterHandler}
+            />
+            <Filter
+              showType={showPartner}
+              onShowTypeHandler={setShowPartner}
+              type={"partner"}
+              onFilterHandler={onFilterHandler}
+            />
+            <Filter
+              showType={showFriends}
+              onShowTypeHandler={setShowFriends}
+              type={"friends"}
+              onFilterHandler={onFilterHandler}
+            />
+            <Filter
+              showType={showKids}
+              onShowTypeHandler={setShowKids}
+              type={"kids"}
+              onFilterHandler={onFilterHandler}
+            />
+            <Filter
+              showType={showSolo}
+              onShowTypeHandler={setShowSolo}
+              type={"solo"}
+              onFilterHandler={onFilterHandler}
+            />
+          </div>
+          <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
         </div>
 
         <div className="anime-contents-wrapper">

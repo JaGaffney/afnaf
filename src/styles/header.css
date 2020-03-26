@@ -13,6 +13,9 @@
 }
 .nav-title a {
   color: var(--dominant);
+  font-family: freight-sans-pro, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.2px;
 }
 .nav-title {
   margin-bottom: 0;
@@ -32,9 +35,7 @@
   margin: 0.2rem;
 }
 .nav-links a {
-  font-family: "Arima Madurai", cursive;
   font-size: 1.5rem;
-  font-weight: 900;
   letter-spacing: 1px;
   text-decoration: none;
   color: var(--light-pink);
@@ -42,7 +43,5 @@
 
 .nav-title {
   font-family: "Arima Madurai", cursive;
-  letter-spacing: -3px;
   font-weight: 900;
-  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
 }
