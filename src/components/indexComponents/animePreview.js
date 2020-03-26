@@ -2,9 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 
-import ReactTooltip from "react-tooltip"
-import { TOOL_TIP_DATA_ANIME } from "../data/tooltip-data"
-
 import Chip from "@material-ui/core/Chip"
 import Rating from "@material-ui/lab/Rating"
 
@@ -29,9 +26,6 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
         readOnly
         className="anime-preview-raiting"
       />
-      <ReactTooltip id="overall" aria-haspopup="dialog" html={true}>
-        {TOOL_TIP_DATA_ANIME.overall}
-      </ReactTooltip>{" "}
       <div className="anime-preview-tags-container">
         {tagValues.map((item, index) => {
           return (

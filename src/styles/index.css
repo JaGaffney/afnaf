@@ -1,10 +1,10 @@
 :root {
   --blue: #7f9cf5;
-  --green: #b5ba7e;
+  --green: #68d391;
   --light-pink: #fed7e2;
-  --light-pink-seethrough: rgba(254, 215, 226, 0.301);
+  --light-pink-seethrough: rgba(254, 215, 226, 0.39);
   --pink: #b83280;
-  --red: #9b090c;
+  --red: #e53e3e;
 
   --dark: black;
   --light: white;

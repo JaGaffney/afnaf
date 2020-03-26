@@ -42,7 +42,7 @@ header {
   min-height: 3rem;
   width: 100%;
   background: var(--background-main);
-  color: var(--accent);
+  color: var(--blue);
 }
 main {
   padding: 1rem;
