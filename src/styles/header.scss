@@ -11,14 +11,16 @@
 .header-title {
   text-align: center;
 }
-.nav-title a {
-  color: var(--dominant);
-  font-family: freight-sans-pro, sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.2px;
-}
+
 .nav-title {
   margin-bottom: 0;
+  font-weight: 900;
+  a {
+    color: var(--dominant);
+    font-family: freight-sans-pro, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+  }
 }
 .nav-title-quote {
   font-size: 1rem;
@@ -30,18 +32,13 @@
   align-items: center;
   list-style-type: none;
   flex-wrap: wrap;
-}
-.nav-links li {
-  margin: 0.2rem;
-}
-.nav-links a {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  text-decoration: none;
-  color: var(--light-pink);
-}
-
-.nav-title {
-  font-family: "Arima Madurai", cursive;
-  font-weight: 900;
+  li {
+    margin: 0.2rem;
+  }
+  a {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: var(--light-pink);
+  }
 }

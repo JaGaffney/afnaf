@@ -3,35 +3,25 @@
   display: flex;
   flex-direction: column;
   align-items: space-around;
+  p {
+    font-size: 1.2rem;
+  }
+  h1,
+  h3 {
+    text-transform: capitalize;
+  }
+  span {
+    font-size: 0.9rem;
+  }
 }
-.review-container p {
-  font-size: 1.2rem;
-}
-.review-container h1,
-.review-container h2,
-.review-container h4 {
-  color: var(--blue);
-  text-transform: capitalize;
-}
-.review-container span {
-  font-size: 0.9rem;
-}
-
-.review-seperator {
-  margin: 1rem 0;
-  align-self: center;
-  width: 80%;
-  height: 1px;
-  background: var(--dark);
-}
-
+// details area
 .review-details {
   width: 100%;
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
   background: var(--gray700);
-  color: var(--gray200);
+  color: var(--gray400);
   margin: 1rem 0;
   padding: 2rem;
   border-radius: 20px;
@@ -48,9 +38,14 @@
 }
 .review-details-title {
   margin-bottom: 1rem;
+  h1 {
+    color: var(--gray100);
+  }
 }
-.review-details-title h1 {
-  color: var(--gray100);
+.review-details-description {
+  h3 {
+    color: var(--gray200);
+  }
 }
 .review-details-image-container {
   order: 3;
@@ -64,6 +59,7 @@
   border-radius: 20px;
 }
 
+// raitings area
 .review-raitings {
   margin: 1rem 0;
   width: 100%;
@@ -75,7 +71,6 @@
   border-radius: 20px;
   box-shadow: 0 0 10px var(--gray600);
 }
-
 .review-raiting-ranking {
   width: 50%;
   text-transform: capitalize;
@@ -84,20 +79,25 @@
   color: var(--dominant);
   text-align: center;
   background: var(--light-pink-seethrough);
+  tr {
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+      background: var(--light-pink);
+      color: var(--light);
+    }
+  }
 }
-.review-raiting-ranking-table tr {
-  font-size: 1rem;
-  cursor: pointer;
-}
-.review-raiting-ranking-table tr:hover {
-  background: var(--light-pink);
-  color: var(--light);
-}
-
 .review-raitings-description {
   min-width: 75%;
   padding: 0 1rem;
   border-left: solid 4px var(--gray400);
+  h3 {
+    color: var(--gray700);
+  }
+  p {
+    color: var(--gray600);
+  }
 }
 
 .review-raiting-card-container {
@@ -118,18 +118,13 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-}
-.review-raiting-card-inner h4,
-.review-raiting-card-inner h1 {
-  margin: 0;
-}
-
-.review-raiting-card-inner h4 {
-  color: var(--dominant);
-}
-
-.hidden-seperator {
-  display: none;
+  h1 {
+    margin: 0;
+  }
+  h4 {
+    color: var(--dominant);
+    margin: 0;
+  }
 }
 
 .dark-chip {

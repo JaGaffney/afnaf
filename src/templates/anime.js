@@ -137,7 +137,13 @@ const AnimeTemplate = ({ data }) => {
               </span>
             </div>
             <div className="review-details-description">
+              <h3>Synopsis</h3>
               <p>{review.description.description}</p>
+            </div>
+
+            <div className="review-details-description">
+              <h3>Recommendation</h3>
+              <p>{review.raiting["overall"]["description"]}</p>
             </div>
           </div>
           <div className="review-details-image-container">
@@ -152,16 +158,14 @@ const AnimeTemplate = ({ data }) => {
         <div className="review-raitings">
           <RaitingContainerCards raitingData={review.raiting} />
 
-          <div className="review-seperator hidden-seperator"></div>
           <div className="review-raitings-description">
             {Object.keys(review.raiting).map((name, index) => {
+              if (name === "overall") {
+                return null
+              }
               return (
                 <React.Fragment key={name + index}>
-                  <h2>
-                    {name === "overall"
-                      ? "Recommendation"
-                      : name.split("_").join(" ")}
-                  </h2>
+                  <h3>{name.split("_").join(" ")}</h3>
                   <p>{review.raiting[name]["description"]}</p>
                 </React.Fragment>
               )
