@@ -167,3 +167,5 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+//afanaf instead of repeating the shows when differnt tags are selected add those shows to a group tag

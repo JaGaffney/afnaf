@@ -25,7 +25,8 @@
   margin: 1rem 0;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 0 10px var(--gray600);
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 .review-details-content {
   order: 2;
@@ -35,6 +36,7 @@
   flex-direction: column;
   justify-content: flex-start;
   margin: 1rem;
+  line-height: 1.8;
 }
 .review-details-title {
   margin-bottom: 1rem;
@@ -92,6 +94,7 @@
   min-width: 75%;
   padding: 0 1rem;
   border-left: solid 4px var(--gray400);
+  line-height: 1.8;
   h3 {
     color: var(--gray700);
   }
