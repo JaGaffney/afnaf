@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1280px) {
   // generics.scss
   .layout-container {
-    grid-template-columns: 5% 90% 5%;
+    grid-template-columns: 2% 96% 2%;
   }
 
   header {
@@ -22,8 +22,10 @@
   }
   .anime-banner {
     flex-direction: column;
+    width: 90%;
   }
   .search-container {
+    align-self: center;
     width: 90%;
   }
 
@@ -38,7 +40,7 @@
 
   .review-raitings-description {
     border: none;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 
   .hidden-seperator {
@@ -56,13 +58,50 @@
 }
 
 @media only screen and (max-width: 864px) {
+  .layout-container {
+    grid-template-columns: 100%;
+  }
+
+  main {
+    grid-column: 1;
+    padding: 0;
+  }
+  footer {
+    grid-column: 1;
+  }
+
+  .review-container {
+    margin: 0rem;
+  }
+  .review-details {
+    padding: 2rem;
+    margin: 0;
+    border-radius: 0;
+  }
+  .review-details-title {
+    h1 {
+      text-align: center;
+    }
+  }
+  .review-raitings {
+    margin: 0;
+    border-radius: 0;
+    padding: 2rem;
+  }
   .anime-preview {
     width: 100%;
     margin: 0;
   }
   .anime-contents-inner {
     width: 100%;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
+    padding: 1rem;
+  }
+
+  .footer-copyright {
+    span {
+      text-align: center;
+    }
   }
 }
 
@@ -71,9 +110,6 @@
     display: none;
   }
 
-  .layout-container {
-    grid-template-columns: 2% 96% 2%;
-  }
   .anime-container {
     justify-content: space-evenly;
   }

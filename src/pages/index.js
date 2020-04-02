@@ -10,6 +10,8 @@ import AnimeContainer from "../components/indexComponents/animeContainer"
 
 import { FILTER_DATA } from "../components/data/filter-data"
 
+import TuneIcon from "@material-ui/icons/Tune"
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -59,6 +61,7 @@ const IndexPage = () => {
   const [showFriends, setShowFriends] = useState(false)
   const [showKids, setShowKids] = useState(false)
   const [showSolo, setShowSolo] = useState(false)
+  const [expanded, setExpanded] = useState(false)
 
   const reviews = data.allContentfulReview.edges
 
@@ -88,6 +91,49 @@ const IndexPage = () => {
     }
   }
 
+  const panel = () => {
+    return (
+      <>
+        <Filter
+          showType={showAll}
+          onShowTypeHandler={setShowAll}
+          type={"reset"}
+          onFilterHandler={onFilterHandler}
+        />
+        <Filter
+          showType={showParents}
+          onShowTypeHandler={setShowParents}
+          type={"parents"}
+          onFilterHandler={onFilterHandler}
+        />
+        <Filter
+          showType={showPartner}
+          onShowTypeHandler={setShowPartner}
+          type={"partner"}
+          onFilterHandler={onFilterHandler}
+        />
+        <Filter
+          showType={showFriends}
+          onShowTypeHandler={setShowFriends}
+          type={"friends"}
+          onFilterHandler={onFilterHandler}
+        />
+        <Filter
+          showType={showKids}
+          onShowTypeHandler={setShowKids}
+          type={"kids"}
+          onFilterHandler={onFilterHandler}
+        />
+        <Filter
+          showType={showSolo}
+          onShowTypeHandler={setShowSolo}
+          type={"solo"}
+          onFilterHandler={onFilterHandler}
+        />
+      </>
+    )
+  }
+
   return (
     <Layout>
       <SEO title="Anime" />
@@ -95,44 +141,17 @@ const IndexPage = () => {
       <div className="anime-container">
         <div className="anime-banner">
           <div className="anime-filter-container">
-            <Filter
-              showType={showAll}
-              onShowTypeHandler={setShowAll}
-              type={"reset"}
-              onFilterHandler={onFilterHandler}
-            />
-            <Filter
-              showType={showParents}
-              onShowTypeHandler={setShowParents}
-              type={"parents"}
-              onFilterHandler={onFilterHandler}
-            />
-            <Filter
-              showType={showPartner}
-              onShowTypeHandler={setShowPartner}
-              type={"partner"}
-              onFilterHandler={onFilterHandler}
-            />
-            <Filter
-              showType={showFriends}
-              onShowTypeHandler={setShowFriends}
-              type={"friends"}
-              onFilterHandler={onFilterHandler}
-            />
-            <Filter
-              showType={showKids}
-              onShowTypeHandler={setShowKids}
-              type={"kids"}
-              onFilterHandler={onFilterHandler}
-            />
-            <Filter
-              showType={showSolo}
-              onShowTypeHandler={setShowSolo}
-              type={"solo"}
-              onFilterHandler={onFilterHandler}
-            />
+            <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
+            <div className="icon-container">
+              <TuneIcon
+                onClick={() => setExpanded(!expanded)}
+                className={`icon-recolour ${expanded &&
+                  "icon-recolour-active"}`}
+              />
+            </div>
+
+            {expanded && panel()}
           </div>
-          <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
         </div>
 
         <div className="anime-contents-wrapper">
