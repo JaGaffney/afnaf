@@ -1,31 +1,21 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import Title from "../images/title.svg"
 
 const Header = ({ siteTitle }) => (
   <header>
     <nav className="header-container">
       <div className="header-title">
-        <h1 className="nav-title">
-          <Link
-            to="/"
-            style={{
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
+        <div className="nav-title">
+          <Link to="/">
+            <img src={Title} alt="logo" />
           </Link>
-        </h1>
-        <span className="nav-title-quote">
-          'Recommend anime without the weirdness'
-        </span>
+        </div>
       </div>
-
-      {/* <ul className="nav-links">
-        <li>
-          <Link to="/about/">About</Link>
-        </li>
-      </ul> */}
+      <span className="nav-title-quote">
+        'Recommend anime without the weirdness'
+      </span>
     </nav>
   </header>
 )

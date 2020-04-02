@@ -134,34 +134,3 @@
   color: var(--gray200) !important;
   border-color: var(--gray200) !important;
 }
-
-@media only screen and (max-width: 1280px) {
-  .review-details {
-    display: flex;
-    flex-direction: column;
-  }
-  .review-details-image-container {
-    order: 1;
-  }
-
-  .review-raitings-description {
-    border: none;
-    padding: 1rem 0;
-  }
-
-  .hidden-seperator {
-    display: inline;
-  }
-
-  .review-raitings {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .review-raiting-ranking {
-    width: 100%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-}

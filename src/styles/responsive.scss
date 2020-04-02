@@ -1,0 +1,84 @@
+@media only screen and (max-width: 1280px) {
+  // generics.scss
+  .layout-container {
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  header {
+    min-height: 7rem;
+  }
+
+  footer {
+    margin-top: 4rem;
+    height: 12rem;
+  }
+  .footer-container {
+    width: 70%;
+  }
+
+  .filter-button {
+    margin: 1rem;
+    font-size: 1rem;
+  }
+  .anime-banner {
+    flex-direction: column;
+  }
+  .search-container {
+    width: 90%;
+  }
+
+  // animes.scss
+  .review-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .review-details-image-container {
+    order: 1;
+  }
+
+  .review-raitings-description {
+    border: none;
+    padding: 1rem 0;
+  }
+
+  .hidden-seperator {
+    display: inline;
+  }
+
+  .review-raitings {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-raiting-ranking {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 864px) {
+  .anime-preview {
+    width: 100%;
+    margin: 0;
+  }
+  .anime-contents-inner {
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-title-quote {
+    display: none;
+  }
+
+  .layout-container {
+    grid-template-columns: 2% 96% 2%;
+  }
+  .anime-container {
+    justify-content: space-evenly;
+  }
+  .anime-contents-container {
+    flex-direction: column;
+    margin: 0;
+  }
+}
