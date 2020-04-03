@@ -8,10 +8,9 @@ import SearchBar from "../components/searchBar"
 import Filter from "../components/indexComponents/filter"
 import AnimeContainer from "../components/indexComponents/animeContainer"
 
-import { FILTER_DATA } from "../components/data/filter-data"
-
 import TuneIcon from "@material-ui/icons/Tune"
 
+// TODO: still need to set searching to not remove the filters
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
@@ -84,7 +83,8 @@ const IndexPage = () => {
       setShowSolo(false)
     } else {
       if (!showType) {
-        setFilterValues({ ...filterValues, [type]: true })
+        setFilterValues({ ...filterValues, [type]: true, all: false })
+        setShowAll(false)
       } else {
         setFilterValues({ ...filterValues, [type]: false })
       }
@@ -141,7 +141,11 @@ const IndexPage = () => {
       <div className="anime-container">
         <div className="anime-banner">
           <div className="anime-filter-container">
-            <SearchBar onSearchItem={setSearchItem} searchItem={searchItem} />
+            <SearchBar
+              onSearchItem={setSearchItem}
+              searchItem={searchItem}
+              onFilterHandler={onFilterHandler}
+            />
             <div className="icon-container">
               <TuneIcon
                 onClick={() => setExpanded(!expanded)}
@@ -149,36 +153,18 @@ const IndexPage = () => {
                   "icon-recolour-active"}`}
               />
             </div>
-
             {expanded && panel()}
           </div>
         </div>
 
         <div className="anime-contents-wrapper">
-          {Object.keys(filterValues).map((item, index) => {
-            if (filterValues[item]) {
-              return (
-                <div className="anime-contents" key={item + index}>
-                  {item !== "all" ? (
-                    <>
-                      <h1 className="anime-contents-title">{item}</h1>
-                      <span className="anime-contents-description">
-                        "{FILTER_DATA[item]}"
-                      </span>
-                    </>
-                  ) : null}
-
-                  <AnimeContainer
-                    reviews={reviews}
-                    filter={item}
-                    filterValues={filterValues}
-                    searchItem={searchItem}
-                  />
-                </div>
-              )
-            }
-            return null
-          })}
+          <div className="anime-contents">
+            <AnimeContainer
+              reviews={reviews}
+              filterValues={filterValues}
+              searchItem={searchItem}
+            />
+          </div>
         </div>
       </div>
     </Layout>
@@ -186,5 +172,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-//afanaf instead of repeating the shows when differnt tags are selected add those shows to a group tag

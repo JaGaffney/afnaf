@@ -6,6 +6,8 @@ const SearchBar = props => {
     // ADD ERROR CHECKING
     let value = e.target.value.toLowerCase()
     props.onSearchItem(value)
+    // resets filters to allow to search for all items
+    props.onFilterHandler("reset", true)
   }
 
   return (

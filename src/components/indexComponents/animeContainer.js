@@ -18,38 +18,36 @@ const AnimeContainer = props => {
     })
     .sort((a, b) => b.rank - a.rank)
 
-  if (props.filterValues[props.filter]) {
-    return (
-      <div className="anime-contents-container">
-        {sortedByRankValues.map((review, index) => {
-          const title = review.title
-          const elevator = review.elevator
-          const slug = review.slug
-          const tags = review.tags
-          const raiting = review.raiting
-          const imageData = review.image.fluid
+  // checks to see if there is no set filters, if so will show all the shows
+  const showAll = Object.keys(props.filterValues).every(
+    k => !props.filterValues[k]
+  )
 
-          if (title === "Template") {
-            return null
-          } else if (props.searchItem !== "") {
-            if (title.toLowerCase().includes(props.searchItem)) {
-              return (
-                <div className="anime-contents-inner" key={index}>
-                  <AnimePreview
-                    title={title}
-                    elevator={elevator}
-                    imageData={imageData}
-                    slug={slug}
-                    tags={tags}
-                    raiting={raiting}
-                    index={index}
-                  />
-                </div>
-              )
-            } else {
-              return null
-            }
-          } else if (tags[props.filter] || props.filter === "all") {
+  return (
+    <div className="anime-contents-container">
+      {sortedByRankValues.map((review, index) => {
+        const title = review.title
+        const elevator = review.elevator
+        const slug = review.slug
+        const tags = review.tags
+        const raiting = review.raiting
+        const imageData = review.image.fluid
+
+        // tag filter
+        let activeTags = Object.keys(tags)
+          .map(item => tags[item] && item)
+          .filter(Boolean)
+        const activeFilterArray = activeTags.map(item => {
+          if (props.filterValues[item]) {
+            return true
+          }
+        })
+        let activeFilter = activeFilterArray.includes(true)
+
+        if (title === "Template") {
+          return null
+        } else if (props.searchItem !== "") {
+          if (title.toLowerCase().includes(props.searchItem)) {
             return (
               <div className="anime-contents-inner" key={index}>
                 <AnimePreview
@@ -63,13 +61,28 @@ const AnimeContainer = props => {
                 />
               </div>
             )
+          } else {
+            return null
           }
-          return null
-        })}
-      </div>
-    )
-  }
-  return null
+        } else if (activeFilter || props.filterValues["all"] || showAll) {
+          return (
+            <div className="anime-contents-inner" key={index}>
+              <AnimePreview
+                title={title}
+                elevator={elevator}
+                imageData={imageData}
+                slug={slug}
+                tags={tags}
+                raiting={raiting}
+                index={index}
+              />
+            </div>
+          )
+        }
+        return null
+      })}
+    </div>
+  )
 }
 
 export default AnimeContainer
