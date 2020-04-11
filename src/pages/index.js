@@ -146,9 +146,12 @@ const IndexPage = () => {
               searchItem={searchItem}
               onFilterHandler={onFilterHandler}
             />
-            <button className="icon-container" aria-label="Filter option menu">
+            <button
+              className="icon-container"
+              aria-label="Filter option menu"
+              onClick={() => setExpanded(!expanded)}
+            >
               <TuneIcon
-                onClick={() => setExpanded(!expanded)}
                 className={`icon-recolour ${expanded &&
                   "icon-recolour-active"}`}
               />
