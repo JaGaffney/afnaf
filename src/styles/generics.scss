@@ -230,3 +230,12 @@
   height: 30rem;
   width: 30rem;
 }
+
+.dark-chip {
+  color: var(--gray700) !important;
+  border-color: var(--gray700) !important;
+}
+.light-chip {
+  color: var(--gray200) !important;
+  border-color: var(--gray200) !important;
+}

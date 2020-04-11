@@ -32,8 +32,8 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
               <Chip
                 size="small"
                 label={item}
-                color="primary"
                 variant="outlined"
+                className="dark-chip"
               />
             </div>
           )

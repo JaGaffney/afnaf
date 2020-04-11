@@ -1,10 +1,8 @@
 :root {
-  --blue: #7f9cf5;
-  --green: #68d391;
-  --light-pink: #fed7e2;
-  --light-pink-seethrough: rgba(254, 215, 226, 0.39);
+  --blue: #4299e1;
   --pink: #b83280;
-  --red: #e53e3e;
+  --red: #bd0000;
+  --purple: #6b46c1;
 
   --dark: black;
   --light: white;
@@ -26,9 +24,9 @@
   --shadow900: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 
-  --dominant: var(--pink);
+  --dominant: var(--red);
   --accent: var(--blue);
-  --third: var(--green);
+  --third: var(--purple);
 
   --background-main: var(--gray200);
 }

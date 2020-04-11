@@ -131,7 +131,7 @@ const AnimeTemplate = ({ data }) => {
                           size="small"
                           label={item}
                           variant="outlined"
-                          className="dark-chip"
+                          className="light-chip"
                         />{" "}
                       </React.Fragment>
                     ))
