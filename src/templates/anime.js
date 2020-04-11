@@ -95,7 +95,7 @@ const AnimeTemplate = ({ data }) => {
     <Layout>
       <SEO title={review.title} />
       <div className="review-container">
-        <div className="review-details">
+        <div className="review-details" aria-label="Overview of anime content">
           <div className="review-details-content">
             <div className="review-details-title">
               <h1>{review.title}</h1>
@@ -155,7 +155,7 @@ const AnimeTemplate = ({ data }) => {
           </div>
         </div>
 
-        <div className="review-raitings">
+        <div className="review-raitings" aria-label="Raitings content">
           <RaitingContainerCards raitingData={review.raiting} />
 
           <div className="review-raitings-description">

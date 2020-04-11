@@ -8,7 +8,10 @@ const Footer = () => {
     <div className="footer-container">
       <ul>
         <li>
-          <a href="https://github.com/JaGaffney/afnaf">
+          <a
+            href="https://github.com/JaGaffney/afnaf"
+            aria-label="Link to GitHub"
+          >
             <FiGithub
               vertical-align="middle"
               horizontal-align="middle"
@@ -17,7 +20,10 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://jongaffney.tech/">
+          <a
+            href="https://jongaffney.tech/"
+            aria-label="Link to my portfolio website"
+          >
             <FiGlobe
               vertical-align="middle"
               horizontal-align="middle"
@@ -26,7 +32,7 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://jongaffney.tech/">
+          <a href="https://jongaffney.tech/" aria-label="Link to Youtube">
             <FiYoutube
               vertical-align="middle"
               horizontal-align="middle"
@@ -35,7 +41,10 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://discord.gg/eZ2BBWu">
+          <a
+            href="https://discord.gg/eZ2BBWu"
+            aria-label="Link to a anime discord"
+          >
             <FaDiscord
               vertical-align="middle"
               horizontal-align="middle"

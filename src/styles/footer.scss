@@ -3,8 +3,12 @@
   align-self: center;
   justify-items: center;
   a {
+    outline: none;
     &:hover {
-      color: var(--blue);
+      color: var(--dominant);
+    }
+    &:focus {
+      color: var(--accent);
     }
   }
   ul {

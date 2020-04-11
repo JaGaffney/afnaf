@@ -7,12 +7,11 @@ import Rating from "@material-ui/lab/Rating"
 
 const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
   const tagValues = Object.keys(tags).filter(item => tags[item] !== false)
-
   return (
     <Link to={`/anime/${slug}/`} className="anime-preview">
       <Image
         fluid={imageData}
-        alt={title}
+        alt={`${title} Poster`}
         className="anime-preview-image"
         objectFit="contain"
         objectPosition="50%"

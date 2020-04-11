@@ -23,6 +23,7 @@ const SearchBar = props => {
         placeholder="Search for an anime..."
         value={props.searchItem || ""}
         onChange={onHandleChange}
+        aria-label="Search bar"
       ></input>{" "}
     </div>
   )

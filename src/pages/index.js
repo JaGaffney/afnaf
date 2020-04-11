@@ -146,13 +146,13 @@ const IndexPage = () => {
               searchItem={searchItem}
               onFilterHandler={onFilterHandler}
             />
-            <div className="icon-container">
+            <button className="icon-container" aria-label="Filter option menu">
               <TuneIcon
                 onClick={() => setExpanded(!expanded)}
                 className={`icon-recolour ${expanded &&
                   "icon-recolour-active"}`}
               />
-            </div>
+            </button>
             {expanded && panel()}
           </div>
         </div>

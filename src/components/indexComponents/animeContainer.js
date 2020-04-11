@@ -37,12 +37,11 @@ const AnimeContainer = props => {
         let activeTags = Object.keys(tags)
           .map(item => tags[item] && item)
           .filter(Boolean)
-        const activeFilterArray = activeTags.map(item => {
-          if (props.filterValues[item]) {
-            return true
-          }
-        })
-        let activeFilter = activeFilterArray.includes(true)
+        // if array has a valid filter value then returns true to generate the show
+        const activeFilter =
+          activeTags.filter(item => props.filterValues[item]).length > 0
+            ? true
+            : false
 
         if (title === "Template") {
           return null
