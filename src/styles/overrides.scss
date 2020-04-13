@@ -18,3 +18,13 @@
 .__react_component_tooltip p {
   font-size: 0.8rem;
 }
+
+.dark-chip {
+  color: var(--gray700) !important;
+  border-color: var(--gray700) !important;
+  cursor: pointer !important;
+}
+.light-chip {
+  color: var(--gray200) !important;
+  border-color: var(--gray200) !important;
+}

@@ -102,13 +102,20 @@ const AnimeTemplate = ({ data }) => {
           <div className="review-details-content">
             <div className="review-details-title">
               <h1>{review.title}</h1>
-              <ToolTipI type={"overall"} />
-              <Rating
-                name="overall-raiting-10"
-                value={review.raiting["overall"]["rank"]}
-                max={10}
-                readOnly
-              />
+              <div className="review-details-title-raiting">
+                <ToolTipI type={"overall"} />
+                <Rating
+                  name="overall-raiting-10"
+                  value={review.raiting["overall"]["rank"]}
+                  max={10}
+                  readOnly
+                  className="raiting-10-stars"
+                />
+                <span className="hidden">
+                  Overall raiting: {review.raiting["overall"]["rank"]}/10
+                </span>
+              </div>
+
               <div>
                 {review.url.length > 3 ? (
                   <a href={review.url} className="youtube-icon">

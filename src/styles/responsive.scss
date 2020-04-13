@@ -70,8 +70,14 @@
     grid-column: 1;
   }
 
+  .raiting-10-stars {
+    font-size: 2rem;
+  }
   .review-container {
     margin: 0rem;
+  }
+  .tooltip-item {
+    display: none;
   }
   .review-details {
     padding: 2rem;

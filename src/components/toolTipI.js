@@ -15,6 +15,7 @@ const ToolTipI = props => {
           data-tip
           data-for={`tooltip-component-${props.type}`}
           style={{ margin: "0 0.1rem" }}
+          className="tooltip-item"
         />
       </>
 

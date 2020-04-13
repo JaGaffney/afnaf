@@ -13,7 +13,16 @@ const RaitingContainerCards = props => {
           <h4>{type.split("_").join(" ")}</h4>
           <div>
             <ToolTipI type={type} />
-            <Rating name="rank" value={value.rank} readOnly />
+            <Rating
+              name="rank"
+              value={value.rank}
+              precision={0.5}
+              readOnly
+              aria-label={`raiting score: ${value.rank}`}
+            />
+            <span className="hidden">
+              {type} raiting: {value.rank}/5
+            </span>
           </div>
         </div>
       </div>

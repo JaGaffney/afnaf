@@ -10,9 +10,6 @@
     text-transform: capitalize;
     margin: 0 0 0.5rem;
   }
-  span {
-    font-size: 0.9rem;
-  }
 }
 // details area
 .review-details {
@@ -42,6 +39,10 @@
   h1 {
     color: var(--gray100);
   }
+}
+.review-details-title-raiting {
+  display: flex;
+  align-items: center;
 }
 .review-details-description {
   h3 {
@@ -126,5 +127,10 @@
   h4 {
     color: var(--dominant);
     margin: 0;
+  }
+  div {
+    span {
+      font-size: 0.9rem;
+    }
   }
 }
