@@ -2,23 +2,6 @@
   color: var(--gray500) !important;
 }
 
-.__react_component_tooltip.show {
-  opacity: 1 !important;
-}
-.tooltip-component-container {
-  text-transform: none !important;
-}
-.__react_component_tooltip {
-  text-align: left;
-  max-width: 35rem;
-}
-.__react_component_tooltip h3 {
-  text-align: center;
-}
-.__react_component_tooltip p {
-  font-size: 0.8rem;
-}
-
 .dark-chip {
   color: var(--gray700) !important;
   border-color: var(--gray700) !important;

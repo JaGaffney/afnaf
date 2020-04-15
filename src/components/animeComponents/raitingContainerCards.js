@@ -37,10 +37,7 @@ const RaitingContainerCards = props => {
               vertical-align="middle"
               horizontal-align="middle"
               size="0.8em"
-              data-tip
-              data-for={`tooltip-component-${props.type}`}
               style={{ margin: "0 0.4rem" }}
-              className="tooltip-item"
             />
             <span>See how the raiting works!</span>
           </Link>
