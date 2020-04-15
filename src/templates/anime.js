@@ -5,7 +5,6 @@ import Image from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RaitingContainerCards from "../components/animeComponents/raitingContainerCards"
-import ToolTipI from "../components/toolTipI"
 
 import { FiYoutube } from "react-icons/fi"
 import Chip from "@material-ui/core/Chip"
@@ -103,7 +102,6 @@ const AnimeTemplate = ({ data }) => {
             <div className="review-details-title">
               <h1>{review.title}</h1>
               <div className="review-details-title-raiting">
-                <ToolTipI type={"overall"} />
                 <Rating
                   name="overall-raiting-10"
                   value={review.raiting["overall"]["rank"]}

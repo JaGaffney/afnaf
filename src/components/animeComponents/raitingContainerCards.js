@@ -1,6 +1,6 @@
 import React from "react"
-import ToolTipI from "../toolTipI"
-
+import { Link } from "gatsby"
+import { FiHelpCircle } from "react-icons/fi"
 import Rating from "@material-ui/lab/Rating"
 
 const RaitingContainerCards = props => {
@@ -12,7 +12,6 @@ const RaitingContainerCards = props => {
         <div className="review-raiting-card-inner">
           <h4>{type.split("_").join(" ")}</h4>
           <div>
-            <ToolTipI type={type} />
             <Rating
               name="rank"
               value={value.rank}
@@ -32,6 +31,21 @@ const RaitingContainerCards = props => {
   return (
     <div className="review-raiting-ranking">
       <div className="review-raiting-card-container">
+        <div className="raitings-help-container">
+          <Link to="/raitings" className="raitings-link">
+            <FiHelpCircle
+              vertical-align="middle"
+              horizontal-align="middle"
+              size="0.8em"
+              data-tip
+              data-for={`tooltip-component-${props.type}`}
+              style={{ margin: "0 0.4rem" }}
+              className="tooltip-item"
+            />
+            <span>See how the raiting works!</span>
+          </Link>
+        </div>
+
         {Object.keys(props.raitingData).map((item, index) => {
           if (props.raitingData[item] != null) {
             return raitingCardGenerator(item, props.raitingData[item], index)

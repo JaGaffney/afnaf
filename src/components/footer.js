@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { FiGithub, FiGlobe, FiYoutube } from "react-icons/fi"
 import { FaDiscord } from "react-icons/fa"
@@ -6,6 +7,9 @@ import { FaDiscord } from "react-icons/fa"
 const Footer = () => {
   return (
     <div className="footer-container">
+      <Link to="/raitings" className="footer-link">
+        Check out how the raiting system works!
+      </Link>
       <ul>
         <li>
           <a

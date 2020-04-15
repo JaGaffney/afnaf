@@ -109,6 +109,26 @@
       text-align: center;
     }
   }
+
+  .raitings-top {
+    border-radius: 0px;
+  }
+  .raitings-bottom {
+    border-radius: 0px;
+  }
+  .raitings-containers {
+    div {
+      flex-wrap: wrap;
+      div {
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      ul {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {

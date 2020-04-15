@@ -240,3 +240,49 @@
   height: 30rem;
   width: 30rem;
 }
+
+.raitings-container-wrapper {
+  margin: 2rem 0.5rem;
+}
+.raitings-containers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem;
+  box-shadow: var(--shadow100);
+  border-bottom: solid 4px var(--gray200);
+  h3 {
+    width: 100%;
+  }
+  div {
+    width: 100%;
+    display: flex;
+    div {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem 0 0;
+    }
+    ul {
+      width: 65%;
+      margin: 0 1rem;
+      list-style: none;
+    }
+  }
+}
+.raitings-top {
+  border-radius: 10px 10px 0 0;
+  border-bottom: solid 10px var(--dominant);
+}
+.raitings-bottom {
+  border-radius: 0 0 10px 10px;
+  border-bottom: none;
+}
+.raitings-dark {
+  background: var(--gray700);
+  color: var(--gray100);
+}
+.raitings-light {
+  background: var(--gray100);
+  color: var(--gray800);
+}
