@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -89,7 +90,6 @@ export const query = graphql`
 const AnimeTemplate = ({ data }) => {
   const review = data.contentfulReview
   const imageData = review.image.fluid
-
   return (
     <Layout>
       <SEO title={review.title} />
@@ -102,13 +102,15 @@ const AnimeTemplate = ({ data }) => {
             <div className="review-details-title">
               <h1>{review.title}</h1>
               <div className="review-details-title-raiting">
-                <Rating
-                  name="overall-raiting-10"
-                  value={review.raiting["overall"]["rank"]}
-                  max={10}
-                  readOnly
-                  className="raiting-10-stars"
-                />
+                <Link to="/raitings">
+                  <Rating
+                    name="overall-raiting-10"
+                    value={review.raiting["overall"]["rank"]}
+                    max={10}
+                    readOnly
+                    className="raiting-10-stars"
+                  />
+                </Link>
                 <span className="hidden">
                   Overall raiting: {review.raiting["overall"]["rank"]}/10
                 </span>
@@ -151,7 +153,11 @@ const AnimeTemplate = ({ data }) => {
 
             <div className="review-details-description">
               <h3>Recommendation</h3>
-              <p>{review.raiting["overall"]["description"]}</p>
+              <p>
+                {review.raiting["overall"]["description"].length > 1
+                  ? review.raiting["overall"]["description"]
+                  : "Coming soon, hopefully."}
+              </p>
             </div>
           </div>
           <div className="review-details-image-container">
@@ -167,17 +173,19 @@ const AnimeTemplate = ({ data }) => {
           <RaitingContainerCards raitingData={review.raiting} />
 
           <div className="review-raitings-description">
-            {Object.keys(review.raiting).map((name, index) => {
-              if (name === "overall") {
-                return null
-              }
-              return (
-                <React.Fragment key={name + index}>
-                  <h3>{name.split("_").join(" ")}</h3>
-                  <p>{review.raiting[name]["description"]}</p>
-                </React.Fragment>
-              )
-            })}
+            {review.raiting["lore"]["description"].length > 1
+              ? Object.keys(review.raiting).map((name, index) => {
+                  if (name === "overall") {
+                    return null
+                  }
+                  return (
+                    <React.Fragment key={name + index}>
+                      <h3>{name.split("_").join(" ")}</h3>
+                      <p>{review.raiting[name]["description"]}</p>
+                    </React.Fragment>
+                  )
+                })
+              : "Coming soon, hopefully"}
           </div>
         </article>
       </div>

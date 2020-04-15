@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 const Raitings = () => {
   return (
     <Layout>
-      <SEO title="Raitings" />
+      <SEO title="Raitings overview" />
       <div className="raitings-container-wrapper">
         <div className="raitings-containers raitings-dark raitings-top">
           <h3>General recommendation</h3>

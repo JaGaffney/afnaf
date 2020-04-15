@@ -12,13 +12,15 @@ const RaitingContainerCards = props => {
         <div className="review-raiting-card-inner">
           <h4>{type.split("_").join(" ")}</h4>
           <div>
-            <Rating
-              name="rank"
-              value={value.rank}
-              precision={0.5}
-              readOnly
-              aria-label={`raiting score: ${value.rank}`}
-            />
+            <Link to="/raitings">
+              <Rating
+                name="rank"
+                value={value.rank}
+                precision={0.5}
+                readOnly
+                aria-label={`raiting score: ${value.rank}`}
+              />
+            </Link>
             <span className="hidden">
               {type} raiting: {value.rank}/5
             </span>
