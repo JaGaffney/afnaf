@@ -7,8 +7,8 @@ import { FaDiscord } from "react-icons/fa"
 const Footer = () => {
   return (
     <div className="footer-container">
-      <Link to="/raitings" className="footer-link">
-        Check out how the raiting system works!
+      <Link to="/ratings" className="footer-link">
+        Check out how the rating system works!
       </Link>
       <ul>
         <li>

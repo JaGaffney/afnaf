@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Raitings = () => {
+const Ratings = () => {
   return (
     <Layout>
       <SEO title="Raitings overview" />
@@ -312,4 +312,4 @@ const Raitings = () => {
   )
 }
 
-export default Raitings
+export default Ratings

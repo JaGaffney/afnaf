@@ -102,7 +102,7 @@ const AnimeTemplate = ({ data }) => {
             <div className="review-details-title">
               <h1>{review.title}</h1>
               <div className="review-details-title-raiting">
-                <Link to="/raitings">
+                <Link to="/ratings">
                   <Rating
                     name="overall-raiting-10"
                     value={review.raiting["overall"]["rank"]}
@@ -112,7 +112,7 @@ const AnimeTemplate = ({ data }) => {
                   />
                 </Link>
                 <span className="hidden">
-                  Overall raiting: {review.raiting["overall"]["rank"]}/10
+                  Overall rating: {review.raiting["overall"]["rank"]}/10
                 </span>
               </div>
 

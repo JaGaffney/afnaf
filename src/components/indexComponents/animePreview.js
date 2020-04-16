@@ -25,9 +25,9 @@ const AnimePreivew = ({ slug, title, elevator, imageData, tags, raiting }) => {
         precision={0.5}
         readOnly
         className="anime-preview-raiting"
-        aria-label={`raiting score: ${raiting.overall.rank}`}
+        aria-label={`rating score: ${raiting.overall.rank}`}
       />
-      <span className="hidden">Overall raiting: {raiting.overall.rank}/10</span>
+      <span className="hidden">Overall rating: {raiting.overall.rank}/10</span>
       <div className="anime-preview-tags-container">
         {tagValues.map((item, index) => {
           return (

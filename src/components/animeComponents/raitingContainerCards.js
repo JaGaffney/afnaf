@@ -12,17 +12,17 @@ const RaitingContainerCards = props => {
         <div className="review-raiting-card-inner">
           <h4>{type.split("_").join(" ")}</h4>
           <div>
-            <Link to="/raitings">
+            <Link to="/ratings">
               <Rating
                 name="rank"
                 value={value.rank}
                 precision={0.5}
                 readOnly
-                aria-label={`raiting score: ${value.rank}`}
+                aria-label={`rating score: ${value.rank}`}
               />
             </Link>
             <span className="hidden">
-              {type} raiting: {value.rank}/5
+              {type} rating: {value.rank}/5
             </span>
           </div>
         </div>
@@ -34,14 +34,14 @@ const RaitingContainerCards = props => {
     <div className="review-raiting-ranking">
       <div className="review-raiting-card-container">
         <div className="raitings-help-container">
-          <Link to="/raitings" className="raitings-link">
+          <Link to="/ratings" className="raitings-link">
             <FiHelpCircle
               vertical-align="middle"
               horizontal-align="middle"
               size="0.8em"
               style={{ margin: "0 0.4rem" }}
             />
-            <span>See how the raiting works!</span>
+            <span>See how the rating works!</span>
           </Link>
         </div>
 
