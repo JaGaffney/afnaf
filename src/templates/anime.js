@@ -16,8 +16,14 @@ export const query = graphql`
     contentfulReview(slug: { eq: $slug }) {
       title
       url
+      status
+      afnaf
+      overall
       description {
         description
+      }
+      recommendation {
+        recommendation
       }
       genre {
         genre
@@ -25,55 +31,64 @@ export const query = graphql`
       elevator {
         elevator
       }
-      raiting {
-        overall {
-          rank
-          description
-        }
-        lore {
-          rank
-          description
-        }
-        music {
-          rank
-          description
-        }
-        animation {
-          rank
-          description
-        }
-        length {
-          rank
-          description
-        }
-        first_5_mins {
-          rank
-          description
-        }
-        first_episode {
-          rank
-          description
-        }
-        availability {
-          rank
-          description
-        }
-        group_watch {
-          rank
-          description
-        }
-        filler {
-          rank
-          description
-        }
-        image_search {
-          rank
-          description
-        }
-        dub_quality {
-          rank
-          description
-        }
+      plot {
+        description
+      }
+      uniqueness {
+        rank
+        description
+      }
+      lore {
+        rank
+        description
+      }
+      enjoyability {
+        rank
+        description
+      }
+      music {
+        rank
+        description
+      }
+      animation {
+        rank
+        description
+      }
+      length {
+        rank
+        description
+      }
+      first5Mins {
+        rank
+        description
+      }
+      filler {
+        rank
+        description
+      }
+      rewatchability {
+        rank
+        description
+      }
+      binge {
+        rank
+        description
+      }
+      availability {
+        rank
+        description
+      }
+      dub {
+        rank
+        description
+      }
+      imageSearch {
+        rank
+        description
+      }
+      fanservice {
+        rank
+        description
       }
       image {
         file {
@@ -90,6 +105,42 @@ export const query = graphql`
 const AnimeTemplate = ({ data }) => {
   const review = data.contentfulReview
   const imageData = review.image.fluid
+
+  // need a better way of handling this
+  const plot = { ...review.plot, name: "plot" } // broken atm for rank no idea why
+  const uniqueness = { ...review.uniqueness, name: "uniqueness" }
+  const lore = { ...review.lore, name: "lore" }
+  const enjoyability = { ...review.enjoyability, name: "enjoyability" }
+  const music = { ...review.music, name: "music" }
+  const animation = { ...review.animation, name: "animation" }
+  const length = { ...review.length, name: "length" }
+  const first5Mins = { ...review.first5Mins, name: "first_5_Mins" }
+  const filler = { ...review.filler, name: "filler" }
+  const rewatchability = { ...review.rewatchability, name: "rewatchability" }
+  const binge = { ...review.binge, name: "binge" }
+  const availability = { ...review.availability, name: "availability" }
+  const dub = { ...review.dub, name: "dub" }
+  const imageSearch = { ...review.imageSearch, name: "image_search" }
+  const fanservice = { ...review.fanservice, name: "fanservice" }
+
+  const raiting = [
+    plot,
+    uniqueness,
+    lore,
+    enjoyability,
+    music,
+    animation,
+    length,
+    first5Mins,
+    filler,
+    rewatchability,
+    binge,
+    availability,
+    dub,
+    imageSearch,
+    fanservice,
+  ]
+
   return (
     <Layout>
       <SEO title={review.title} />
@@ -105,14 +156,15 @@ const AnimeTemplate = ({ data }) => {
                 <Link to="/ratings">
                   <Rating
                     name="overall-raiting-10"
-                    value={review.raiting["overall"]["rank"]}
+                    value={review.afnaf}
                     max={10}
                     readOnly
+                    precision={0.5}
                     className="raiting-10-stars"
                   />
                 </Link>
                 <span className="hidden">
-                  Overall rating: {review.raiting["overall"]["rank"]}/10
+                  Overall rating: {review.afnaf}/10
                 </span>
               </div>
 
@@ -154,8 +206,8 @@ const AnimeTemplate = ({ data }) => {
             <div className="review-details-description">
               <h3>Recommendation</h3>
               <p>
-                {review.raiting["overall"]["description"].length > 1
-                  ? review.raiting["overall"]["description"]
+                {review.recommendation !== null
+                  ? review.recommendation.recommendation
                   : "Coming soon, hopefully."}
               </p>
             </div>
@@ -170,18 +222,15 @@ const AnimeTemplate = ({ data }) => {
         </article>
 
         <article className="review-raitings" aria-label="Raitings content">
-          <RaitingContainerCards raitingData={review.raiting} />
+          <RaitingContainerCards raitingData={raiting} />
 
           <div className="review-raitings-description">
-            {review.raiting["lore"]["description"].length > 1
-              ? Object.keys(review.raiting).map((name, index) => {
-                  if (name === "overall") {
-                    return null
-                  }
+            {raiting[0]["description"].length > 1
+              ? Object.keys(raiting).map((item, index) => {
                   return (
-                    <React.Fragment key={name + index}>
-                      <h3>{name.split("_").join(" ")}</h3>
-                      <p>{review.raiting[name]["description"]}</p>
+                    <React.Fragment key={item + index}>
+                      <h3>{raiting[item]["name"].split("_").join(" ")}</h3>
+                      <p>{raiting[item]["description"]}</p>
                     </React.Fragment>
                   )
                 })

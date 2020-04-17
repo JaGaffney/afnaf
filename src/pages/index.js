@@ -29,11 +29,7 @@ const IndexPage = () => {
               kids
               solo
             }
-            raiting {
-              overall {
-                rank
-              }
-            }
+            afnaf
             image {
               fluid(maxWidth: 400) {
                 ...GatsbyContentfulFluid_withWebp

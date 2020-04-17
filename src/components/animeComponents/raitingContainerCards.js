@@ -47,7 +47,11 @@ const RaitingContainerCards = props => {
 
         {Object.keys(props.raitingData).map((item, index) => {
           if (props.raitingData[item] != null) {
-            return raitingCardGenerator(item, props.raitingData[item], index)
+            return raitingCardGenerator(
+              props.raitingData[item]["name"],
+              props.raitingData[item],
+              index
+            )
           } else {
             return null
           }

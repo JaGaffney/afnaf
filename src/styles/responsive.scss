@@ -38,7 +38,7 @@
     order: 1;
   }
 
-  .review-raitings-description {
+  .review-ratings-description {
     border: none;
     padding: 1rem;
   }
@@ -47,12 +47,12 @@
     display: inline;
   }
 
-  .review-raitings {
+  .review-ratings {
     display: flex;
     flex-direction: column;
   }
 
-  .review-raiting-ranking {
+  .review-rating-ranking {
     width: 100%;
   }
 }
@@ -70,7 +70,7 @@
     grid-column: 1;
   }
 
-  .raiting-10-stars {
+  .rating-10-stars {
     font-size: 2rem;
   }
   .review-container {
@@ -86,7 +86,7 @@
       text-align: center;
     }
   }
-  .review-raitings {
+  .review-ratings {
     margin: 0;
     border-radius: 0;
     padding: 2rem;
@@ -107,13 +107,13 @@
     }
   }
 
-  .raitings-top {
+  .ratings-top {
     border-radius: 0px;
   }
-  .raitings-bottom {
+  .ratings-bottom {
     border-radius: 0px;
   }
-  .raitings-containers {
+  .ratings-containers {
     div {
       flex-wrap: wrap;
       div {

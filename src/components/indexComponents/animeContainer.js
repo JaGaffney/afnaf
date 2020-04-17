@@ -8,15 +8,14 @@ const AnimeContainer = props => {
     .map(item => {
       return {
         title: props.reviews[item].node.title,
-        rank: props.reviews[item].node.raiting.overall.rank,
+        raiting: props.reviews[item].node.afnaf,
         elevator: props.reviews[item].node.elevator,
         slug: props.reviews[item].node.slug,
         tags: props.reviews[item].node.tags,
         image: props.reviews[item].node.image,
-        raiting: props.reviews[item].node.raiting,
       }
     })
-    .sort((a, b) => b.rank - a.rank)
+    .sort((a, b) => b.raiting - a.raiting)
 
   // checks to see if there is no set filters, if so will show all the shows
   const showAll = Object.keys(props.filterValues).every(
