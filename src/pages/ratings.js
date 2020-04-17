@@ -285,7 +285,7 @@ const Ratings = () => {
           </div>
         </div>
 
-        <div className="raitings-containers raitings-light raitings-bottom">
+        <div className="raitings-containers raitings-light">
           <h3>Dub Quality</h3>
           <div>
             <div>
@@ -304,6 +304,22 @@ const Ratings = () => {
               </li>
               <li>Very strong Dub.</li>
               <li>High quality Dub.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="raitings-containers raitings-light">
+          <h3>Enjoyability</h3>
+          <div>
+            <div>
+              <p>How enjoyable is it to watch?</p>
+            </div>
+            <ol>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ol>
           </div>
         </div>

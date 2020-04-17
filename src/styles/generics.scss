@@ -136,6 +136,9 @@
   background: var(--gray100);
   outline: none;
   border: solid 2px transparent;
+  &:hover {
+    border: solid 2px var(--gray300);
+  }
   &:focus {
     border: solid 2px var(--accent);
   }
