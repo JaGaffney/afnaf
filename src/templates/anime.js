@@ -152,7 +152,8 @@ const AnimeTemplate = ({ data }) => {
           <div className="review-details-content">
             <div className="review-details-title">
               <h1>{review.title}</h1>
-              <div className="review-details-title-raiting">
+              <div className="review-details-title-display">
+                <span>Anime for non-anime fans</span>
                 <Link to="/ratings">
                   <Rating
                     name="overall-raiting-10"
@@ -164,7 +165,23 @@ const AnimeTemplate = ({ data }) => {
                   />
                 </Link>
                 <span className="hidden">
-                  Overall rating: {review.afnaf}/10
+                  Anime for non-anime fans rating: {review.afnaf}/10
+                </span>
+              </div>
+              <div className="review-details-title-display">
+                <span>General rating</span>
+                <Link to="/ratings">
+                  <Rating
+                    name="overall-raiting-10"
+                    value={review.overall}
+                    max={10}
+                    readOnly
+                    precision={0.5}
+                    className="raiting-10-stars"
+                  />
+                </Link>
+                <span className="hidden">
+                  Overall rating: {review.overall}/10
                 </span>
               </div>
 
@@ -180,8 +197,8 @@ const AnimeTemplate = ({ data }) => {
                 ) : null}
               </div>
 
-              <span>
-                Genre:{" "}
+              <div className="review-details-title-display">
+                <span>Genre</span>
                 <i>
                   {review.genre.genre
                     .map((item, index) => (
@@ -196,7 +213,17 @@ const AnimeTemplate = ({ data }) => {
                     ))
                     .sort()}
                 </i>
-              </span>
+              </div>
+
+              <div className="review-details-title-display">
+                <span>Status</span>
+                <Chip
+                  size="small"
+                  label={review.status}
+                  variant="outlined"
+                  className="light-chip"
+                />
+              </div>
             </div>
             <div className="review-details-description">
               <h3>Synopsis</h3>
