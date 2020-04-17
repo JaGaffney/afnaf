@@ -272,7 +272,7 @@
 }
 .ratings-top {
   border-radius: 10px 10px 0 0;
-  border-bottom: solid 10px var(--dominant);
+  border-bottom: solid 4px var(--gray600) !important;
 }
 .ratings-bottom {
   border-radius: 0 0 10px 10px;
@@ -281,6 +281,7 @@
 .ratings-dark {
   background: var(--gray700);
   color: var(--gray100);
+  border-bottom: solid 10px var(--dominant);
 }
 .ratings-light {
   background: var(--gray100);

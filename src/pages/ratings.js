@@ -68,12 +68,12 @@ const Ratings = () => {
             </div>
             <ul>
               <li>
-                1 star. Very boring and repetaive with nothing interesting
+                1 star. Very boring and repetitive with nothing interesting
                 happening.
               </li>
-              <li>2 stars. Very generic but not to bad to watch.</li>
-              <li>3 stars. Generic,but done in a new/intersting way.</li>
-              <li>4 stars. Very engaing plot.</li>
+              <li>2 stars. Very generic but not too bad to watch.</li>
+              <li>3 stars. Generic, but done in a new/intersting way.</li>
+              <li>4 stars. Very engaging plot.</li>
               <li>5 stars. Amazing story.</li>
             </ul>
           </div>
@@ -90,9 +90,9 @@ const Ratings = () => {
               </p>
             </div>
             <ul>
-              <li>1 star. Very generic and nothing spceical.</li>
+              <li>1 star. Very generic and nothing special.</li>
               <li>
-                2 stars. Hopefully there is other redeming qualitys as its not
+                2 stars. Hopefully there is other redeeming qualities as its not
                 winning any awards for its idea
               </li>
               <li>3 stars. Interesting idea but has been done before.</li>
@@ -341,9 +341,9 @@ const Ratings = () => {
             </div>
             <ul>
               <li>1 star. One and done</li>
-              <li>2 stars. Has one of two good moments to watch on youtube</li>
-              <li>3 stars. Have rewatched key episodes on youtube</li>
-              <li>4 stars. Rewatched whole arcs again</li>
+              <li>2 stars. Has one of two good moments to watch on Youtube</li>
+              <li>3 stars. Have watched key episodes again on Youtube</li>
+              <li>4 stars. Re-watched whole arcs again</li>
               <li>
                 5 stars. Can/Have watched multiple times from start to finish
               </li>
@@ -389,7 +389,7 @@ const Ratings = () => {
             <div>
               <p>
                 How much fanservice is in the anime and if that fanservice is
-                too off putting to be recomedned
+                too off putting to be recommended.
               </p>
             </div>
             <ul>
@@ -398,7 +398,7 @@ const Ratings = () => {
                 2 stars. The plot is basically how high its rating can be.
               </li>
               <li>
-                3 stars. Has some weird moments but doesnt take away from the
+                3 stars. Has some weird moments but doesn’t take away from the
                 story.
               </li>
               <li>
