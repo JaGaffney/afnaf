@@ -32,6 +32,7 @@ export const query = graphql`
         elevator
       }
       plot {
+        rank
         description
       }
       uniqueness {
