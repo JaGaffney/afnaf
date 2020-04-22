@@ -143,7 +143,7 @@ const IndexPage = () => {
               onFilterHandler={onFilterHandler}
             />
             <button
-              className="icon-container"
+              className="filter-button-container"
               aria-label="Filter option menu"
               onClick={() => setExpanded(!expanded)}
             >

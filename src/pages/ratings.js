@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 const Ratings = () => {
   return (
     <Layout>
-      <SEO title="ratings overview" />
+      <SEO title="Ratings overview" />
       <div className="ratings-container-wrapper">
         <div className="ratings-containers ratings-dark ratings-top">
           <h3>Anime for non-anime fans recommendation</h3>
