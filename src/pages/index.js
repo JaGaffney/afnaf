@@ -134,7 +134,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Anime" />
 
-      <div className="anime-container">
+      <section className="anime-container">
         <div className="anime-banner">
           <div className="anime-filter-container">
             <SearchBar
@@ -156,7 +156,7 @@ const IndexPage = () => {
           </div>
         </div>
 
-        <div className="anime-contents-wrapper">
+        <article className="anime-contents-wrapper">
           <div className="anime-contents">
             <AnimeContainer
               reviews={reviews}
@@ -164,8 +164,8 @@ const IndexPage = () => {
               searchItem={searchItem}
             />
           </div>
-        </div>
-      </div>
+        </article>
+      </section>
     </Layout>
   )
 }

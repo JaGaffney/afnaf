@@ -30,3 +30,13 @@
 
   --background-main: var(--gray200);
 }
+
+body {
+  background: var(--gray100);
+  background: -webkit-linear-gradient(
+    to bottom,
+    var(--gray100),
+    var(--gray200)
+  );
+  background: linear-gradient(to bottom, var(--gray100), var(--gray200));
+}
